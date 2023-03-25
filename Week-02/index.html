@@ -24,7 +24,7 @@
         <a href="#">Log In</a>
       </li>
       <li>
-        <a href="#">Contact</a>
+        <a href="#contact-id">Contact</a>
       </li>
     </ul>
 
@@ -32,13 +32,19 @@
       <h2>OTHER OPTIONS</h2>
       <ul>
         <li>
-          How can we help you?
+          <a href="#help-id">
+            How can we help you?
+          </a>
         </li>
         <li>
-          Our History
+          <a href="#history-id">
+            Our History
+          </a>
         </li>
         <li>
-          Activities
+          <a href="#act-mem-id">
+            Activities
+          </a>
         </li>
       </ul>
 
@@ -53,7 +59,7 @@
           </p>
         </li>
         <li>
-          <img src="./img/icons8-casa-30.png" alt="casa">
+          <img src="./img/icons8-casa-30.png" alt="place">
           <p>
             Rosario, Argentina.
           </p>
@@ -73,7 +79,7 @@
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nihil, quas ut repudiandae earum laboriosam perspiciatis odio consequatur minima nisi officia omnis, dicta corporis tenetur officiis reiciendis temporibus a soluta?
     </p>
     <img src="./img/image4.png" alt="">
-    <section>
+    <section id="help-id">
       <h2>HOW CAN WE HELP YOU?</h2>
       <div>
         <ul>
@@ -91,46 +97,67 @@
           </li>
         </ul>
       </div>
+    </section>
+
+    <section id="contact-id">
+      <h2>CONTACT</h2>
       <div>
-        <h2>CONTACT</h2>
         <form action="">
-          <label for="name">Name</label>
-          <input type="text" placeholder="Insert your name">
-          <label for="surname">Surname</label>
-          <input type="text" placeholder="Insert your surname">
-          <label for="email">Email</label>
-          <input type="email" placeholder="Insert your email">  
+          <div>
+            <label for="name">Name</label>
+            <input type="text" placeholder="Insert your name">
+          </div>
+          <div>
+            <label for="surname">Surname</label>
+            <input type="text" placeholder="Insert your surname">
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" placeholder="Insert your email">  
+          </div>
           <p>
             Reason for contact:
           </p>
-          <input type="radio" name="reason for contact">
-          <label for="query">
-            I want to make a query or suggestion
-          </label>
-          <input type="radio" name="reason for contact">
-          <label for="claim">
-            I want to make a claim
-          </label>
-          <input type="radio" name="reason for contact">
-          <label for="memberships">
-            I want to know the memberships and costs
-          </label>
-          <label for="message">Message</label>
-          <textarea name="message" id="" cols="40" rows="3"></textarea>
-          <button type="submit">Submit</button>
-          <button>Reset</button>
+          <div>
+            <input type="radio" name="reason for contact">
+            <label for="query">
+              I want to make a query or suggestion
+            </label>
+          </div>
+          <div>
+            <input type="radio" name="reason for contact">
+            <label for="claim">
+              I want to make a claim
+            </label>
+          </div>
+          <div>
+            <input type="radio" name="reason for contact">
+            <label for="memberships">
+              I want to know the memberships and costs
+            </label>
+          </div>
+          <div>
+            <div>
+              <label for="message">Message</label>
+            </div>
+            <textarea name="message" id="" cols="40" rows="3"></textarea>
+          </div>
+          <div>
+            <button type="submit">Submit</button>
+            <button>Reset</button>
+          </div>
         </form>
       </div>
     </section>
   
-    <section>
+    <section id="history-id">
       <h2>OUR HISTORY</h2>
       <p>
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos nemo reprehenderit nihil modi molestias officiis, eius molestiae deleniti neque voluptatum vitae aut esse debitis impedit tenetur! Nemo mollitia explicabo quas accusantium est a ipsum minima commodi quod? Voluptas, quia quidem vel suscipit fugiat aliquid doloremque, dolore at quo, ipsa veniam.
       </p>
     </section>
 
-    <section>
+    <section id="act-mem-id">
       <div>
         <h2>ACTIVITIES</h2>
         <ul>
@@ -228,17 +255,17 @@
     <div>
       <ul>
         <li>
-          <a href="https://www.gmail.com">
+          <a href="https://www.gmail.com" target="_blank">
             <img src="./img/image10.png" alt="Gmail">
           </a>
         </li>
         <li>
-          <a href="https://www.facebook.com">
+          <a href="https://www.facebook.com" target="_blank">
             <img src="./img/image8.png" alt="Facebook">
           </a>
         </li>
         <li>
-          <a href="https://www.instagram.com">
+          <a href="https://www.instagram.com" target="_blank">
             <img src="./img/image11.png" alt="Instagram">
           </a>
         </li>
