@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>RR Landing Page</title>
   </head>
   <body>
@@ -13,9 +14,9 @@
       <h1>Mega Rocket S.A</h1>
     </header>
     <aside>
-      <img src="./img/logo-rr.jpg" alt="Radium-Rocket rocket logo">
-      <nav>
-        <ul>
+      <img class="rr-logo" src="./img/logo-rr.png" alt="Radium-Rocket rocket logo">
+      <nav class="navbar">
+        <ul class="nav-list">
           <li>
             <a href="#">Home</a>
           </li>
@@ -31,7 +32,7 @@
         </ul>
       </nav>
       <h2>Other options</h2>
-      <ul>
+      <ul class="other-op-list">
         <li>
           <a href="#help-id">How can we help you?</a>
         </li>
@@ -42,39 +43,41 @@
           <a href="#act-mem-id">Activities</a>
         </li>
       </ul> 
-      <ul>
+      <ul class="aside-info-list">
         <li>
           <a href="mailto:info@rocket.com" target="_blank">
             <img src="./img/icons8-gmail-30.png" alt="Mail envelope icon">
+            info@rocket.com
           </a>
-          info@rocket.com
         </li>
         <li>
           <a href="https://www.google.com.ar/maps" target="_blank">
             <img src="./img/icons8-casa-30.png" alt="House icon which represents location">
+            Rosario, Argentina.
           </a>
-          Rosario, Argentina.
         </li>
         <li>
-          <a href="https://www.whatsapp.com/" target="_blank">
+          <a href="tel:000000000" target="_blank">
             <img src="./img/icons8-whatsapp-30.png" alt="Whatsapp icon">
+            (000) 000-000
           </a>
-          (000) 000-000
         </li>
       </ul>
     </aside>
     <main>
-      <h2>The main reason of health</h2>
-      <p>
-        Component Body Maecenas interdum faucibus quam ac interdum.
-        Donec facilisis vitae ipsum a ullamcorper. Proin interdum suscipit velit.
-        Nullam pulvinar efficitur sapien ac rhoncus.
-        Aenean scelerisque, nisi at interdum laoreet, est nisi sagittis enim, nec eleifend justo orci quis nisl.
-        Morbi fringilla felis non ipsum dapibus, eget ornare tortor hendrerit.
-        Curabitur ac eleifend orci. Donec condimentum ex non leo volutpat pretium.
-        Cras aliquet quam quis semper egestas. Sed at ultricies turpis. Aenean cursus porta eleifend.
-      </p>
-      <img src="./img/image4.png" alt="Two people exercising with dumbbells">
+      <section id="main-reason">
+        <h2>The main reason of health</h2>
+        <p>
+          Component Body Maecenas interdum faucibus quam ac interdum.
+          Donec facilisis vitae ipsum a ullamcorper. Proin interdum suscipit velit.
+          Nullam pulvinar efficitur sapien ac rhoncus.
+          Aenean scelerisque, nisi at interdum laoreet, est nisi sagittis enim, nec eleifend justo orci quis nisl.
+          Morbi fringilla felis non ipsum dapibus, eget ornare tortor hendrerit.
+          Curabitur ac eleifend orci. Donec condimentum ex non leo volutpat pretium.
+          Cras aliquet quam quis semper egestas. Sed at ultricies turpis. Aenean cursus porta eleifend.
+        </p>
+        <img src="./img/image4.png" alt="Two people exercising with dumbbells">
+      </section>
       <section id="help-id">
         <h2>How can we help you?</h2>
         <img src="./img/image5.png" alt="Man doing biceps exercise with dumbbell">
@@ -95,7 +98,7 @@
       </section>
       <section id="contact-id">
         <h2>Contact</h2>
-        <form action="">
+        <form>
           <label for="name">
             Name
           </label>
@@ -103,27 +106,27 @@
           <label for="surname">
             Surname
           </label>
-          <input type="text" placeholder="Insert your surname" name="surname" required>
+          <input type="text" placeholder="Insert your surname" id="surname" required>
           <label for="email">
             Email
           </label>
-          <input type="email" placeholder="Insert your email" name="email" required>
-          <input type="radio" name="reason-for-contact" required>
+          <input type="email" placeholder="Insert your email" id="email" required>
+          <input type="radio" id="query" name="reason-for-contact" required>
           <label for="query">
             I want to make a query or suggestion
           </label>
-          <input type="radio" name="reason-for-contact" required>
+          <input type="radio" id="claim" name="reason-for-contact" required>
           <label for="claim">
             I want to make a claim
           </label>
-          <input type="radio" name="reason-for-contact" required>
+          <input type="radio" id="memberships" name="reason-for-contact" required>
           <label for="memberships">
             I want to know the memberships and costs
           </label>
           <label for="message">
             Message
           </label>
-          <textarea name="message" id="" cols="40" rows="3" required></textarea>
+          <textarea name="message" id="message" cols="40" rows="3" required></textarea>
           <input type="submit" value="Submit">
           <input type="reset" value="Reset">
         </form>
