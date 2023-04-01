@@ -123,3 +123,38 @@ main {
   right: 0px;
 }
 
+#main-reason {
+  margin: 40px;
+  position: relative;
+}
+
+#main-reason div {
+  position: absolute;
+  width: 40%;
+  display: inline-block;
+}
+
+#main-reason div h2 {
+  padding-bottom: 20px;
+  font-size: 25px;
+  font-weight: 700;
+  color: #373867;
+}
+
+#main-reason div p {
+  font-size: 18px;
+  font-weight: 600;
+  color: #373867;
+}
+
+#main-reason img {
+  position: relative;
+  left: 450px;
+  width: 60%;
+}
+
+.separation-line {
+  margin: 0 40px;
+  background-color: #373867;
+  height: 5px;
+}
