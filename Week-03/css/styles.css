@@ -3,10 +3,10 @@ body {
 }
 
 header {
-  position: absolute;
+  position: relative;
   width: 80%;
   height: 135px;
-  right: 0px;
+  margin-left: 20%;
   background-color: #373867;
 }
 
@@ -35,20 +35,19 @@ aside {
   z-index: 1;
   width: 20%;
   height: 100%;
+  top: 0;
   left: 0;
   background-color: #AACE9B;
   text-align: center;
 }
 
 .rr-logo {
-  position: relative;
   width: 95px;
   height: 140px;
   padding: 20px;
 }
 
 .nav-list li {
-  position: relative;
   margin: 25px 45px;
   width: 69.5%;
   height: 60px;
@@ -124,10 +123,8 @@ aside h2 {
 }
 
 main {
-  position: absolute;
-  width: 80%;
-  top: 135px;
-  right: 0px;
+  position: relative;
+  margin-left: 20%;
 }
 
 section {
@@ -275,8 +272,9 @@ section {
   font-weight: 700;
   color: #373867;
 }
-
+ 
 .reason-for-contact {
+  display: block;
   margin: 8px 0;
   font-size: 30px;
   font-weight: 700;
@@ -432,4 +430,46 @@ margin-bottom: 100px;
   list-style-type: disc;
   font-size: 20px;
   font-weight: 600;
+}
+
+footer {
+  position: relative;
+  width: 80%;
+  margin-left: 20%;
+  background-color: #373867;
+}
+
+footer small {
+  position: relative;
+  bottom: 54px;
+  left: 50px;
+  font-weight: 600;
+}
+
+footer ul {
+  display: inline-block;
+  position: relative;
+  left: 425px;
+}
+
+footer ul li {
+  display: inline-block;
+}
+
+.gmail {
+  position: relative;
+  bottom: 35px;
+  left: 63px;
+}
+
+.facebook {
+  position: relative;
+  bottom: 5px;
+  left: 55px;
+}
+
+.instagram {
+  position: relative;
+  bottom: 13px;
+  left: 20px;
 }
