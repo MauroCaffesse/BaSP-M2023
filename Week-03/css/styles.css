@@ -356,3 +356,80 @@ input[type=reset] {
   text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
   color: #FFFFFF;
 }
+
+#act-mem-id {
+  position: relative;
+  width: 93.5%;
+}
+
+#act-mem-id div {
+  display: inline-block;
+  padding: 0 40px;
+  width: 40%;
+}
+
+#act-mem-id h2 {
+  font-size: 40px;
+  font-weight: 700;
+  padding-bottom: 20px;
+}
+
+.activities-container {
+  color: #373867;
+}
+
+.activities-list {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.activities-list li {
+  padding: 13px 0;
+}
+
+.activities-list li img {
+  width: 117px;
+  height: 110px;
+}
+
+.activities-list li p {
+  display: inline-block;
+  position: relative;
+  bottom: 40px;
+  left: 90px;
+}
+
+.memberships-container {
+  position: absolute;
+  top: 0;
+  margin-left: 20px;
+}
+
+.memberships-list {
+  position: relative;
+  bottom: 18px;
+  left: 74px;
+}
+
+
+.memberships-list li h3 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.memberships-list li img {
+  position: relative;
+  top: 74px;
+  right: 64px;
+}
+
+.membership-list-info {
+margin-bottom: 100px;
+}
+
+.membership-items {
+  margin: 20px 0 0 18px;
+  list-style-type: disc;
+  font-size: 20px;
+  font-weight: 600;
+}
