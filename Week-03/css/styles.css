@@ -32,6 +32,7 @@ header h1 {
 
 aside {
   position: fixed;
+  z-index: 1;
   width: 20%;
   height: 100%;
   left: 0;
@@ -320,4 +321,38 @@ input[type=reset] {
   font-size: 16px;
   font-weight: 600;
   color: #373867;
+}
+
+#history-id {
+  height: 865px;
+  width: 1142px;
+}
+
+#history-id h2 {
+  position: relative;
+  left: 0;
+  font-size: 40px;
+  font-weight: 700;
+  color: #373867;
+}
+
+#history-id img {
+  position: absolute;
+  left: 0px;
+  top: 70px;
+  width: 1135px;
+  z-index: -1;
+}
+
+#history-id p {
+  position: relative;
+  top: 280px;
+  left: 145px;
+  width: 804px;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: justify;
+  line-height: 35px;
+  text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+  color: #FFFFFF;
 }
