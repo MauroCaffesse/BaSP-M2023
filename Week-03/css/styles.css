@@ -186,10 +186,6 @@ section {
   z-index: -1;
 }
 
-.help-list {
-  position: relative;
-}
-
 .help-list li {
   position: absolute;
   height: 107px;
@@ -199,19 +195,19 @@ section {
   border: 2px solid #373867;
 }
 
-.help-list li:nth-child(1){
+.help-list li:nth-child(1) {
   top: 267px;
   left: 131px;
 }
-.help-list li:nth-child(2){
+.help-list li:nth-child(2) {
   top: 267px;
   right: 131px;
 }
-.help-list li:nth-child(3){
+.help-list li:nth-child(3) {
   top: 556px;
   left: 131px;
 }
-.help-list li:nth-child(4){
+.help-list li:nth-child(4) {
   top: 556px;
   right: 131px;
 }
@@ -227,4 +223,101 @@ section {
 
 .help-list li:nth-child(2) p, .help-list li:nth-child(4) p {
   margin: 24px 0;
+}
+
+.contact-title {
+  position: relative;
+  height: 100px;
+}
+
+.contact-title h2 {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  font-size: 40px;
+  font-weight: 700;
+  color: #373867;
+}
+
+.contact-title img {
+  position: absolute;
+  bottom: 47px;
+  left: 200px;
+}
+
+.user-data {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-weight: 600;
+  color: #373867;
+}
+
+.user-data input {
+  width: 293px;
+  height: 45px;
+  margin-left: 60px;
+  padding: 0 20px;
+  border: 2px solid #373867;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.user-data:nth-child(1) input, .user-data:nth-child(3) input {
+  margin-left: 107px;
+}
+
+.contact-form h3 {
+  margin: 40px 0 20px 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #373867;
+}
+
+.reason-for-contact {
+  margin: 8px 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #373867;
+}
+
+.message {
+  display: block;
+  margin: 50px 0 15px 0;
+  font-size: 30px;
+  font-weight: 700;
+  color: #373867;
+}
+
+.contact-form textarea {
+  display: block;
+  padding: 5px 15px;
+  border: 2px solid #E0E0E0;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #373867;
+}
+
+input[type=submit] {
+  width: 178px;
+  height: 47px;
+  margin: 20px 50px 0 0;
+  background-color: #AACE9B;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #373867;
+}
+
+input[type=reset] {
+  width: 111px;
+  height: 46px;
+  margin-top: 20px;
+  border: 1.5px solid #373867;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #373867;
 }

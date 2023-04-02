@@ -109,37 +109,47 @@
       </section>
       <div class="separation-line"></div>
       <section id="contact-id">
-        <h2>Contact</h2>
-        <form>
-          <label for="name">
+        <div class="contact-title">
+          <h2>Contact</h2>
+          <img src="./img/contact-icon.png" alt="envelope icon">
+        </div>
+        <form class="contact-form">
+          <label class="user-data" for="name">
             Name
+            <input type="text" placeholder="Insert your name" name="name" required>
           </label>
-          <input type="text" placeholder="Insert your name" name="name" required>
-          <label for="surname">
+          <label class="user-data" for="surname">
             Surname
+            <input type="text" placeholder="Insert your surname" id="surname" required>
           </label>
-          <input type="text" placeholder="Insert your surname" id="surname" required>
-          <label for="email">
+          <label class="user-data" for="email">
             Email
+            <input type="email" placeholder="Insert your email" id="email" required>
           </label>
-          <input type="email" placeholder="Insert your email" id="email" required>
-          <input type="radio" id="query" name="reason-for-contact" required>
-          <label for="query">
-            I want to make a query or suggestion
-          </label>
-          <input type="radio" id="claim" name="reason-for-contact" required>
-          <label for="claim">
-            I want to make a claim
-          </label>
-          <input type="radio" id="memberships" name="reason-for-contact" required>
-          <label for="memberships">
-            I want to know the memberships and costs
-          </label>
-          <label for="message">
+          <h3>Reason for contact:</h3>
+          <div class="reason-for-contact">
+            <input type="radio" id="query" name="reason-for-contact" required>
+            <label for="query">
+              I want to make a query or suggestion
+            </label>
+          </div>
+          <div class="reason-for-contact">
+            <input type="radio" id="claim" name="reason-for-contact" required>
+            <label for="claim">
+              I want to make a claim
+            </label>
+          </div>
+          <div class="reason-for-contact">
+            <input type="radio" id="memberships" name="reason-for-contact" required>
+            <label for="memberships">
+              I want to know the memberships and costs
+            </label>
+          </div>
+          <label class="message" for="message">
             Message
           </label>
-          <textarea name="message" id="message" cols="40" rows="3" required></textarea>
-          <input type="submit" value="Submit">
+          <textarea name="message" id="message" cols="105" rows="10" placeholder="Type your message here" required></textarea>
+          <input type="submit" value="Send message">
           <input type="reset" value="Reset">
         </form>
       </section>
