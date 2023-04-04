@@ -26,7 +26,6 @@ header h1 {
 
 aside {
   position: fixed;
-  z-index: 1;
   width: 20%;
   height: 100%;
   top: 0;
@@ -55,8 +54,7 @@ aside {
 }
 
 .nav-list li a {
-  position: relative;
-  top: 20px;
+  line-height: 63px;
   font-size: 20px;
   text-decoration: none;
   text-transform: uppercase;
@@ -81,7 +79,7 @@ aside h2 {
 }
 
 .other-op-list {
-  padding: 0 0 0 40px;
+  padding-left: 40px;
   text-align: left;
 }
 
@@ -114,7 +112,7 @@ aside h2 {
   top: 6px;
 }
 
-main {
+main, footer {
   margin-left: 20%;
 }
 
@@ -159,9 +157,8 @@ section {
 }
 
 #help-id h2 {
-  line-height: 260px;
+  line-height: 235px;
   font-size: 40px;
-  font-weight: 700;
   color: #EBECF0;
 }
 
@@ -172,30 +169,19 @@ section {
   z-index: -1;
 }
 
+.help-list {
+  width: 1142px;
+}
+
 .help-list li {
-  position: absolute;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 33px 96px 95px 96px;
   height: 107px;
   width: 351px;
   background-color: #EBECF0;
   border-radius: 5px;
   border: 2px solid #373867;
-}
-
-.help-list li:nth-child(1) {
-  top: 267px;
-  left: 131px;
-}
-.help-list li:nth-child(2) {
-  top: 267px;
-  right: 131px;
-}
-.help-list li:nth-child(3) {
-  top: 556px;
-  left: 131px;
-}
-.help-list li:nth-child(4) {
-  top: 556px;
-  right: 131px;
 }
 
 .help-list li p {
@@ -389,7 +375,6 @@ input[type=reset] {
   margin: -18px 0 0 74px;
 }
 
-
 .memberships-list li h3 {
   font-size: 30px;
   font-weight: 700;
@@ -414,13 +399,12 @@ margin-bottom: 100px;
 footer {
   height: 132px;
   width: 80%;
-  margin-left: 20%;
   background-color: #373867;
 }
 
 footer small {
   display: inline-block;
-  margin: 62px 0 0 50px;
+  margin: 62px 0 0 75px;
   vertical-align: top;
   font-weight: 600;
 }
@@ -432,4 +416,8 @@ footer ul {
 
 footer ul li {
   display: inline-block;
+}
+
+footer ul li a img {
+  margin-right: 10px;
 }
