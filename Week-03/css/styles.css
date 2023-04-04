@@ -3,29 +3,23 @@ body {
 }
 
 header {
-  position: relative;
   width: 80%;
-  height: 135px;
   margin-left: 20%;
   background-color: #373867;
 }
 
 header img {
-  position: relative;
-  top: 45px;
-  left: 50px;
+  margin: 45px 50px;
 }
 
 header h1 {
   display: inline-block;
-  position: absolute;
-  left: 310px;
-  top: 38px;
+  vertical-align: top;
+  margin: 45px 0;
   width: 485px;
   height: 45px;
   font-size: 40px;
   font-weight: 700;
-  line-height: 46.88px;
   text-transform: uppercase;
   color: #AACE9B;
 }
@@ -54,7 +48,6 @@ aside {
   background-color: #EBECF0;
   border-radius: 5px;
   border: 2px solid #373867;
-  
 }
 
 .nav-list li:first-child {
@@ -104,7 +97,6 @@ aside h2 {
 }
 
 .aside-info-list {
-  position: relative;
   padding: 10px 40px;
   text-align: left;
 }
@@ -123,7 +115,6 @@ aside h2 {
 }
 
 main {
-  position: relative;
   margin-left: 20%;
 }
 
@@ -134,7 +125,7 @@ section {
 
 #main-reason div {
   display: inline-block;
-  position: absolute;
+  vertical-align: top;
   width: 40%;
 }
 
@@ -152,9 +143,7 @@ section {
 }
 
 #main-reason img {
-  position: relative;
-  width: 60%;
-  left: 450px;
+  width: 58%;
 }
 
 .separation-line {
@@ -170,8 +159,7 @@ section {
 }
 
 #help-id h2 {
-  position: relative;
-  top: 124px;
+  line-height: 260px;
   font-size: 40px;
   font-weight: 700;
   color: #EBECF0;
@@ -211,7 +199,6 @@ section {
 }
 
 .help-list li p {
-  position: relative;
   margin: 39px 0;
   font-weight: 600;
   font-size: 30px;
@@ -224,23 +211,20 @@ section {
 }
 
 .contact-title {
-  position: relative;
   height: 100px;
 }
 
 .contact-title h2 {
   display: inline-block;
-  position: absolute;
-  top: 0;
+  vertical-align: top;
   font-size: 40px;
   font-weight: 700;
   color: #373867;
 }
 
 .contact-title img {
-  position: absolute;
-  bottom: 47px;
-  left: 200px;
+  display: inline-block;
+  margin-top: -11px;
 }
 
 .user-data {
@@ -279,6 +263,10 @@ section {
   font-size: 30px;
   font-weight: 700;
   color: #373867;
+}
+
+input[type="radio"] {
+  accent-color: #34636E;
 }
 
 .message {
@@ -327,8 +315,6 @@ input[type=reset] {
 }
 
 #history-id h2 {
-  position: relative;
-  left: 0;
   font-size: 40px;
   font-weight: 700;
   color: #373867;
@@ -343,9 +329,7 @@ input[type=reset] {
 }
 
 #history-id p {
-  position: relative;
-  top: 280px;
-  left: 145px;
+  margin: 300px 145px;
   width: 804px;
   font-size: 30px;
   font-weight: 700;
@@ -356,7 +340,6 @@ input[type=reset] {
 }
 
 #act-mem-id {
-  position: relative;
   width: 93.5%;
 }
 
@@ -392,21 +375,18 @@ input[type=reset] {
 
 .activities-list li p {
   display: inline-block;
-  position: relative;
-  bottom: 40px;
-  left: 90px;
+  height: 110px;
+  vertical-align: middle;
+  margin-left: 50px;
 }
 
 .memberships-container {
-  position: absolute;
-  top: 0;
+  vertical-align: top;
   margin-left: 20px;
 }
 
 .memberships-list {
-  position: relative;
-  bottom: 18px;
-  left: 74px;
+  margin: -18px 0 0 74px;
 }
 
 
@@ -426,50 +406,30 @@ margin-bottom: 100px;
 }
 
 .membership-items {
-  margin: 20px 0 0 18px;
-  list-style-type: disc;
+  margin-top: 20px;
   font-size: 20px;
   font-weight: 600;
 }
 
 footer {
-  position: relative;
+  height: 132px;
   width: 80%;
   margin-left: 20%;
   background-color: #373867;
 }
 
 footer small {
-  position: relative;
-  bottom: 54px;
-  left: 50px;
+  display: inline-block;
+  margin: 62px 0 0 50px;
+  vertical-align: top;
   font-weight: 600;
 }
 
 footer ul {
-  display: inline-block;
-  position: relative;
-  left: 425px;
+  margin: 35px 10px 0 0;
+  float: right;
 }
 
 footer ul li {
   display: inline-block;
-}
-
-.gmail {
-  position: relative;
-  bottom: 35px;
-  left: 63px;
-}
-
-.facebook {
-  position: relative;
-  bottom: 5px;
-  left: 55px;
-}
-
-.instagram {
-  position: relative;
-  bottom: 13px;
-  left: 20px;
 }
