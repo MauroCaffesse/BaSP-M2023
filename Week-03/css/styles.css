@@ -15,9 +15,9 @@ header img {
 header h1 {
   display: inline-block;
   vertical-align: top;
-  margin: 45px 0;
   width: 485px;
   height: 45px;
+  margin: 45px 0;
   font-size: 40px;
   font-weight: 700;
   text-transform: uppercase;
@@ -41,9 +41,9 @@ aside {
 }
 
 .nav-list li {
-  margin: 35px 45px;
   width: 69.5%;
   height: 60px;
+  margin: 35px 45px;
   background-color: #EBECF0;
   border-radius: 5px;
   border: 2px solid #373867;
@@ -56,9 +56,9 @@ aside {
 .nav-list li a {
   line-height: 63px;
   font-size: 20px;
+  font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: 600;
   color: #373867;
 }
 
@@ -95,7 +95,7 @@ aside h2 {
 }
 
 .aside-info-list {
-  padding: 20px 40px;
+  padding: 10px 40px;
   text-align: left;
 }
 
@@ -112,8 +112,7 @@ aside h2 {
 }
 
 .aside-info-list li a img {
-  position: relative;
-  top: 6px;
+  vertical-align: middle;
 }
 
 main, footer {
@@ -328,8 +327,8 @@ input[type=reset] {
 
 #act-mem-id div {
   display: inline-block;
-  padding: 0 40px;
   width: 40%;
+  padding: 0 40px;
 }
 
 #act-mem-id h2 {
@@ -356,8 +355,8 @@ input[type=reset] {
 
 .activities-list li p {
   display: inline-block;
-  height: 110px;
   vertical-align: middle;
+  height: 110px;
   margin-left: 50px;
 }
 
@@ -382,7 +381,7 @@ input[type=reset] {
 }
 
 .membership-list-info {
-margin-bottom: 100px;
+margin-bottom: 135px;
 }
 
 .membership-items {
@@ -400,8 +399,8 @@ footer {
 
 footer small {
   display: inline-block;
-  margin: 62px 0 0 75px;
   vertical-align: top;
+  margin: 62px 0 0 75px;
   font-weight: 600;
 }
 
