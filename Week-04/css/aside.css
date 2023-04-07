@@ -1,3 +1,94 @@
 aside {
   display: none;
+  position: sticky;
+  top: 0;
+  /* display: flex; */
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  background-color: #FFFFFF;
+}
+
+.hamburger-menu-aside {
+  align-self: flex-start;
+  margin: 1rem;
+  width: 47px;
+  height: 47px;
+}
+
+.rr-logo {
+  order: 1;
+  width: 4.2rem;
+  border: 1px solid #AACE9B;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 40vh;
+}
+
+.nav-list li {
+  display: inline-block;
+  width: 12.5rem;
+  background-color: #EBECF0;
+  border: 2px solid #AACE9B;
+  border-radius: 0.3rem;
+}
+
+.nav-list li:first-child {
+  background-color: #373867;
+}
+
+.nav-list li:last-child, .other-op-title, .other-op-list {
+  display: none;
+}
+
+.nav-list-a {
+  line-height: 4rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+  -webkit-text-stroke: 0.5px #AACE9B;
+}
+
+.nav-list li:first-child a {
+  color: #F7FBF5;
+}
+
+.aside-info-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: baseline;
+  height: 17vh;
+}
+
+.aside-info-list-a {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.aside-info-list-a img {
+  vertical-align: middle;
+}
+
+.aside-bottom-txt {
+  order: 2;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #34646F;
+}
+
+.social-media-aside {
+  order: 3;
+  align-self: flex-end;
+}
+
+.social-media-img-aside {
+  width: 2.2rem;
 }
