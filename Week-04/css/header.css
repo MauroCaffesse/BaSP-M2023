@@ -18,7 +18,6 @@ header {
 .header-title {
   margin: auto;
   font-size: 2rem;
-  text-transform: uppercase;
   font-weight: 700;
   color: #AACE9B;
 }

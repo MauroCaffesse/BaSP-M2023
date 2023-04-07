@@ -5,15 +5,11 @@ main {
   width: 100vw;
 }
 
-section {
-  width: 100vw;
-  height: 90vh;
-}
-
 #main-reason, #help-id, #contact-id, #history-id, #act-mem-id {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100vw;
   text-align: center;
 }
 
@@ -26,15 +22,17 @@ section {
 }
 
 .main-reason-img {
+  order: 1;
   width: 100vw;
   margin-bottom: 2rem;
 }
 
 .main-reason-p {
+  order: 2;
+  margin: 1rem 1.5rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1rem;
-  margin: 0 1.2rem;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
 }
 
@@ -45,7 +43,7 @@ section {
 }
 
 .help-title {
-  margin: 7rem 3.4rem 2rem;
+  margin: 7rem 3.4rem 1rem;
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 3rem;
@@ -56,7 +54,9 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin-bottom: 6rem;
   height: 25rem;
+  
 }
 
 .help-list li {
@@ -105,7 +105,7 @@ section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 5vh;
+  margin: 0.5rem 0;
   font-weight: 700;
 }
 
@@ -139,7 +139,7 @@ section {
 
 .message {
   align-self: baseline;
-padding: 0.5rem 0 1.5rem;
+  padding: 0.5rem 0 1.5rem;
   font-size: 0.875rem;
   font-weight: 700;
 }
@@ -171,6 +171,102 @@ padding: 0.5rem 0 1.5rem;
   font-weight: 600;
 }
 
-.history-img {
-  width: 90vw;
+#history-id {
+  justify-content: space-evenly;
+  height: 37rem;
+  margin-top: 2rem;
+}
+
+.history-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+.history-p {
+  padding: 9rem 2rem;
+  background-image: url(../img/image6.png);
+  background-size: cover;
+  background-position: center;
+  text-align: justify;
+  text-shadow: 2px 2px 1px rgba(0,0,0,0.7);
+  color: #EBECF0;
+}
+
+.activities-title, .memberships-title {
+  margin: 2.5rem 0;
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+.activities-list li {
+  display: flex;
+  align-items: center;
+  width: 42vw;
+  margin: 2rem 0;
+}
+
+.activities-list-img {
+  width: 2.5rem;
+}
+
+.activities-list-p {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-left: 1rem;
+}
+
+.memberships-container {
+  width: 100vw;
+}
+
+.membership-list-info {
+  display: flex;
+  align-items: start;
+  width: 80vw;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+.membership-list-info img {
+  width: 2.2rem;
+  margin-top: 1rem;
+}
+
+.membership-subtitle-container {
+  padding-left: 2rem;
+  text-align: left;
+}
+
+.membership-subtitle {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.membership-items {
+  width: 60vw;
+  list-style-type:"-";
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.footer-txt {
+  font-size: 0.75rem;
+  line-height: 2rem;
+}
+
+.social-media-list {
+  display: flex;
+}
+
+.social-media-img {
+  width: 1.25rem;
+  margin: 0 0.1rem;
 }
