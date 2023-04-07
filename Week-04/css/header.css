@@ -1,0 +1,24 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+}
+
+.hamburger-menu {
+  width: 47px;
+  height: 47px;
+  margin: 0 0.3rem;
+}
+
+.rocket-logo {
+  display: none;
+}
+
+.header-title {
+  margin: auto;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #AACE9B;
+}

@@ -1,0 +1,15 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.blue-bg-color {
+  background-color: #373867;
+}
+
+.blue-txt {
+  color: #373867;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}

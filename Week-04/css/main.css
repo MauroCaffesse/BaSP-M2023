@@ -1,0 +1,176 @@
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+
+section {
+  width: 100vw;
+  height: 90vh;
+}
+
+#main-reason, #help-id, #contact-id, #history-id, #act-mem-id {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.main-reason-title {
+  text-align: center;
+  margin: 3rem 2rem 1.5rem 2rem;
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.main-reason-img {
+  width: 100vw;
+  margin-bottom: 2rem;
+}
+
+.main-reason-p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1rem;
+  margin: 0 1.2rem;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+#help-id {
+  background-image: url(../img/image5.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.help-title {
+  margin: 7rem 3.4rem 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 3rem;
+  color: #EBECF0;
+}
+
+.help-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 25rem;
+}
+
+.help-list li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4.4rem;
+  width: 14.2rem;
+  background-color: #EBECF0;
+  border-radius: 0.3rem;
+  border: 2px solid #373867;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.help-p {
+  margin: 0 1rem;
+}
+
+.contact-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-title {
+  align-self: center;
+  margin: 1rem 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.contact-img {
+  width: 2.5rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  width: 85vw;
+  margin-top: 1rem;
+}
+
+.user-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5vh;
+  font-weight: 700;
+}
+
+.user-data input {
+  height: 1.7rem;
+  width: 45vw;
+  padding-left: 1rem;
+  border: 2px solid #373867;
+  border-radius: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.contact-subtitle {
+  align-self: flex-start;
+  margin: 2rem 0;
+  font-weight: 700;
+}
+
+.reason-for-contact {
+  align-self: baseline;
+  text-align: left;
+  margin-bottom: 1.3rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.reason-for-contact input {
+  margin: 0 1rem 0 0;
+}
+
+.message {
+  align-self: baseline;
+padding: 0.5rem 0 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+#message {
+  margin-bottom: 1.5rem;
+}
+
+.form-btn-container {
+  display: flex;
+  justify-content: space-between;
+  width: 65vw;
+}
+
+.form-btn-send {
+  width: 9rem;
+  height: 1.6rem;
+  background-color: #AACE9B;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.form-btn-reset {
+  width: 6rem;
+  height: 1.6rem;
+  border: 1.5px solid #373867;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.history-img {
+  width: 90vw;
+}

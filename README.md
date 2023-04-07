@@ -18,8 +18,12 @@ During this week, I focused on developing the HTML structure of the Landing Page
 I started by breaking down the different sections of the page into individual HTML elements, including the header, nav, main content, and footer. Within each section, I carefully crafted the appropriate HTML tags to create a well-organized and semantically meaningful structure for the page, for accessibility and SEO purposes.
 
 
-## Week 03
+## Week 03:
 ### Styling the website using CSS pixel-perfect method
 
 During this week, I focused on implementing the CSS for the Landing Page of the gym management system. I used the pixel-perfect method to ensure that the design was faithfully recreated in code.
 To achieve the pixel-perfect look, I did not use modern layout techniques such as flexbox or grid. Instead, I relied on traditional CSS layout methods such as float, inline-block, and positioning. This allowed me to accurately place and style each element of the page according to the design specifications.
+
+
+## Week 04:
+###
