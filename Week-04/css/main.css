@@ -52,11 +52,11 @@ main {
 
 .help-list {
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
+  flex-wrap: wrap;
   margin-bottom: 6rem;
+  width: 62%;
   height: 25rem;
-  
 }
 
 .help-list li {
@@ -140,7 +140,6 @@ main {
 
 .message {
   align-self: baseline;
-  padding: 0.5rem 0 1.5rem;
   font-size: 0.875rem;
   font-weight: 700;
 }
@@ -153,6 +152,7 @@ main {
   display: flex;
   justify-content: space-between;
   width: 65%;
+  min-width: 16.6rem;
 }
 
 .form-btn-send {
@@ -167,6 +167,7 @@ main {
 .form-btn-reset {
   width: 6rem;
   height: 1.6rem;
+  background-color: #FFFFFF;
   border: 1.5px solid #373867;
   border-radius: 5px;
   font-weight: 600;
@@ -175,7 +176,6 @@ main {
 #history-id {
   justify-content: space-evenly;
   height: 37rem;
-  margin-top: 2rem;
 }
 
 .history-title {
@@ -184,7 +184,10 @@ main {
 }
 
 .history-p {
-  padding: 9rem 2rem;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  height: 80%;
   background-image: url(../img/image6.png);
   background-size: cover;
   background-position: center;
@@ -311,7 +314,7 @@ main {
   }
 
   .contact-title, .history-title, .activities-title, .memberships-title {
-    font-size: 2.5rem;
+    font-size: 1.9rem;
   }
 
   .contact-img {
@@ -319,7 +322,7 @@ main {
   }
 
   .user-data, .contact-subtitle, .reason-for-contact, .message {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
 
   .form-btn-container {
@@ -343,11 +346,11 @@ main {
   }
 
   .history-p {
-    font-size: 1.875rem;
+    font-size: 1.7rem;
   }
 
   .activities-list-p {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   
   .memberships-list {
@@ -369,11 +372,118 @@ main {
   }
 
   .membership-subtitle {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .membership-items {
     width: 19rem;
     font-size: 1.15rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #main-reason {
+    flex-flow: column wrap;
+    max-height: 34.2rem;
+  }
+
+  .main-reason-title {
+    text-align: center;
+    margin: 3rem 0 0;
+    text-transform: uppercase;
+    font-size: 1.875rem;
+    font-weight: 700;
+    width: 47%;
+  }
+
+  .main-reason-p {
+    width: 40%;
+    order: 0;
+    margin: 1rem 0 4rem;
+  }
+  .main-reason-img {
+    order: 0;
+    width: 52%;
+    margin-bottom: 2rem;
+    max-width: 38rem;
+  }
+
+  .separation-line {
+    height: 0.25rem;
+    width: 90%;
+    margin: 2rem 0;
+  }
+
+  .help-title {
+    margin: 7rem 3.4rem 5rem;
+  }
+  
+  .help-list {
+    width: 100%;
+    max-width: 57.2rem;
+  }
+
+  .contact-title-container {
+    align-self: baseline;
+    margin-left: 6.5%;
+  }
+  .user-data {
+    width: 50%;
+  }
+
+  #message {
+    width: 80%;
+  }
+
+  .history-title {
+    align-self: flex-start;
+    margin-left: 6.5%;
+    margin-bottom: 1rem;
+  }
+
+  .history-p {
+    height: 100%;
+    width: 67%;
+    font-size: 2rem;
+    padding: 0px 8rem; 
+  }
+
+  #act-mem-id {
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  .activities-title {
+    margin: 2.5rem 5rem 2.5rem 0;
+  }
+
+  .activities-container {
+    width: 80%;
+  }
+
+  .activities-list {
+    height: auto;
+    width: auto;
+  }
+
+  .activities-list li {
+    margin: 0 0 2rem;
+  }
+
+  .activities-list-p {
+    margin-left: 4rem;
+  }
+
+  .activities-list-img {
+    width: 6rem;
+  }
+
+  .memberships-title {
+    margin: 2.5rem 5rem 2.5rem 0;
+    color: #000;
+  }
+
+  .membership-list-info {
+    margin: 0 0 5rem 0;
   }
 }

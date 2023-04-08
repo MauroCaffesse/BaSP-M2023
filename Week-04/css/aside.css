@@ -98,6 +98,7 @@ aside {
 
 .social-media-img-aside {
   width: 2.2rem;
+  margin-left: 0.3rem;
 }
 
 @media screen and (min-width: 480px) { 
@@ -183,5 +184,11 @@ aside {
 
   .aside-info-list-a img {
     width: 1.5vw;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .nav-list {
+    height: 40vh;
   }
 }
