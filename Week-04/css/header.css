@@ -21,3 +21,26 @@ header {
   font-weight: 700;
   color: #AACE9B;
 }
+
+@media screen and (min-width: 480px) {
+  header {
+    width: 80%;
+    height: 5rem;
+    margin-left: 20%;
+    justify-content: initial;
+  }
+
+  .rocket-logo {
+    display: inline-block;
+    width: 30%;
+    margin: 0.7rem 0.6rem 0;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  .header-title {
+    margin: 0;
+  }
+}

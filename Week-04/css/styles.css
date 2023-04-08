@@ -13,3 +13,10 @@ body {
 .uppercase {
   text-transform: uppercase;
 }
+
+@media screen and (min-width: 480px) {
+  body {
+    display: flex;
+    flex-flow: column wrap;
+  }  
+}

@@ -9,7 +9,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
+  width: 100%;
   text-align: center;
 }
 
@@ -23,13 +23,13 @@ main {
 
 .main-reason-img {
   order: 1;
-  width: 100vw;
+  width: 100%;
   margin-bottom: 2rem;
 }
 
 .main-reason-p {
   order: 2;
-  margin: 1rem 1.5rem;
+  margin: 1rem 1.5rem 4rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1rem;
@@ -97,7 +97,7 @@ main {
   display: flex;
   flex-flow: column wrap;
   justify-content: space-between;
-  width: 85vw;
+  width: 85%;
   margin-top: 1rem;
 }
 
@@ -111,7 +111,7 @@ main {
 
 .user-data input {
   height: 1.7rem;
-  width: 45vw;
+  width: 55%;
   padding-left: 1rem;
   border: 2px solid #373867;
   border-radius: 1.5rem;
@@ -151,7 +151,7 @@ main {
 .form-btn-container {
   display: flex;
   justify-content: space-between;
-  width: 65vw;
+  width: 65%;
 }
 
 .form-btn-send {
@@ -201,7 +201,6 @@ main {
 .activities-list li {
   display: flex;
   align-items: center;
-  width: 42vw;
   margin: 2rem 0;
 }
 
@@ -216,13 +215,14 @@ main {
 }
 
 .memberships-container {
-  width: 100vw;
+  width: 100%;
 }
 
 .membership-list-info {
   display: flex;
   align-items: start;
-  width: 80vw;
+  justify-content: center;
+  width: 50%;
   margin: auto;
   margin-bottom: 3rem;
 }
@@ -250,23 +250,13 @@ main {
   font-weight: 700;
 }
 
-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 0.5rem;
-}
+@media screen and (min-width: 480px) {
+  main {
+    width: 80%;
+    margin-left: 20%;
+  }
 
-.footer-txt {
-  font-size: 0.75rem;
-  line-height: 2rem;
-}
-
-.social-media-list {
-  display: flex;
-}
-
-.social-media-img {
-  width: 1.25rem;
-  margin: 0 0.1rem;
+  .membership-items {
+    width: 17rem;
+  }
 }
