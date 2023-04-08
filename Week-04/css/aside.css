@@ -107,7 +107,6 @@ aside {
     position: fixed;
     top: 0;
     width: 20vw;
-    height: 100vh;
     background-color: #AACE9B;
   }
 
@@ -140,14 +139,15 @@ aside {
   }
 
   .nav-list-a {
-    line-height: 2rem;
-    font-size: 0.8rem;
+    line-height: 4vw;
+    font-size: 1.7vw;
   }
 
   .other-op-title {
     display: inline-block;
     width: 90%;
-    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    font-size: 2vw;
     font-weight: 700;
 
   }
@@ -163,25 +163,25 @@ aside {
   }
 
   .other-op-list-a {
-    margin: 1px;
     text-decoration: none;
-    font-size: 0.775rem;
+    font-size: 1.7vw;
     font-weight: 700;
 
   }
   
   .aside-info-list {
-    margin-bottom: 5rem;
+    justify-content: initial;
     width: 80%;
     text-align: left;
   }
   
   .aside-info-list-a {
-    font-size: 0.5rem;
+    display: inline-block;
+    margin-bottom: 0.6rem;
+    font-size: 1.5vw;
   }
 
   .aside-info-list-a img {
-    width: 0.8rem;
+    width: 1.5vw;
   }
-
 }

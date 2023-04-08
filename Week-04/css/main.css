@@ -98,6 +98,7 @@ main {
   flex-flow: column wrap;
   justify-content: space-between;
   width: 85%;
+  height: 42rem;
   margin-top: 1rem;
 }
 
@@ -209,7 +210,7 @@ main {
 }
 
 .activities-list-p {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 600;
   margin-left: 1rem;
 }
@@ -222,7 +223,7 @@ main {
   display: flex;
   align-items: start;
   justify-content: center;
-  width: 50%;
+  width: 76%;
   margin: auto;
   margin-bottom: 3rem;
 }
@@ -233,7 +234,7 @@ main {
 }
 
 .membership-subtitle-container {
-  padding-left: 2rem;
+  padding-left: 1rem;
   text-align: left;
 }
 
@@ -255,8 +256,124 @@ main {
     width: 80%;
     margin-left: 20%;
   }
+  
+  .activities-container {
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+  }
 
+  .activities-list {
+    width: 90%;
+    max-width: 30rem;
+    display: flex;
+    flex-flow: column wrap;
+    height: 40vh;
+    justify-content: flex-start;
+    margin-left: 1rem;
+  }
+
+  .activities-list li {
+    margin: 1rem 0;
+  }
+
+  .activities-list-img {
+    width: 4.3rem;
+  }
+
+  .activities-list-p {
+    line-height: 4rem;
+  }
+
+  
   .membership-items {
     width: 17rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main-reason-p {
+    font-size: 1.25rem;
+  }
+  
+  .help-list {
+    height: 30rem;
+  }
+
+  .help-list li {
+    width: 19rem;
+    height: 5.4rem;
+  }
+
+  .help-p {
+    font-size: 1.5rem;
+  }
+
+  .contact-title, .history-title, .activities-title, .memberships-title {
+    font-size: 2.5rem;
+  }
+
+  .contact-img {
+    width: 3rem;
+  }
+
+  .user-data, .contact-subtitle, .reason-for-contact, .message {
+    font-size: 1.25rem;
+  }
+
+  .form-btn-container {
+    max-width: 21.8rem;
+  }
+
+  .form-btn-send {
+    width: 10rem;
+    height: 2.6rem;
+    font-size: 1rem;
+  }
+  
+  .form-btn-reset {
+    width: 7rem;
+    height: 2.6rem;
+    font-size: 1rem;
+  }
+  
+  #history-id {
+    height: 46rem;
+  }
+
+  .history-p {
+    font-size: 1.875rem;
+  }
+
+  .activities-list-p {
+    font-size: 1.8rem;
+  }
+  
+  .memberships-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    max-width: 552px;
+    width: 90%;
+  }
+
+  .membership-list-info {
+    width: 84%;
+    margin: 0 0 3rem 0;
+  }
+
+  .membership-subtitle-container {
+    width: 78%;
+  }
+
+  .membership-subtitle {
+    font-size: 1.8rem;
+  }
+
+  .membership-items {
+    width: 19rem;
+    font-size: 1.15rem;
   }
 }

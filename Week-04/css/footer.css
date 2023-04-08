@@ -30,3 +30,13 @@ footer {
     margin: 0 0.1rem;
   }
 }
+
+@media screen and (min-width: 768px) {
+  footer {
+    height: 4rem;
+  }
+
+  .footer-txt {
+    font-size: 1rem;
+  }
+}
