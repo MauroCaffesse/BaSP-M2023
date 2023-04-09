@@ -6,8 +6,7 @@ header {
 }
 
 .hamburger-menu {
-  width: 47px;
-  height: 47px;
+  width: 2.94rem;
   margin: 0 0.3rem;
 }
 
@@ -18,7 +17,6 @@ header {
 .header-title {
   margin: auto;
   font-size: 1.6rem;
-  font-weight: 700;
   color: #AACE9B;
 }
 

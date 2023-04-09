@@ -22,6 +22,7 @@ footer {
 @media screen and (min-width: 480px) {
   footer {
     width: 80%;
+    height: 3rem;
     margin-left: 20%;
   }
 

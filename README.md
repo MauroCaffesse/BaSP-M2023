@@ -26,4 +26,8 @@ To achieve the pixel-perfect look, I did not use modern layout techniques such a
 
 
 ## Week 04:
-###
+### Styling the website using CSS Responsive design with Flexblox
+
+[MegaRocket S.A. GitHub Pages](https://maurocaffesse.github.io/BaSP-M2023/Week-04/)
+
+During this week, I applied responsive design principles to the same Landing Page using flexbox. I followed the mobile-first approach, designing for smaller screen sizes first and gradually scaling up, using media-queries. I used flexbox to create a flexible and adaptable layout that could adjust to different screen sizes while maintaining its structure and readability.
