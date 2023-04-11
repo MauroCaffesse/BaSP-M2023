@@ -1,12 +1,10 @@
 main {
-  display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
 }
 
 #main-reason, #help-id, #contact-id, #history-id, #act-mem-id {
-  display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
@@ -31,8 +29,8 @@ main {
   margin: 1rem 1.5rem 4rem;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1rem;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  text-align: start;
 }
 
 #help-id {
@@ -49,7 +47,6 @@ main {
 }
 
 .help-list {
-  display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   margin-bottom: 6rem;
@@ -58,7 +55,6 @@ main {
 }
 
 .help-list li {
-  display: flex;
   justify-content: center;
   align-items: center;
   height: 4.4rem;
@@ -74,7 +70,6 @@ main {
 }
 
 .contact-title-container {
-  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -89,8 +84,7 @@ main {
 }
 
 .contact-form {
-  display: flex;
-  flex-flow: column wrap;
+  flex-direction: column;
   justify-content: space-between;
   width: 85%;
   height: 75vh;
@@ -98,7 +92,6 @@ main {
 }
 
 .user-data {
-  display: flex;
   justify-content: space-between;
   align-items: center;
 }
@@ -138,7 +131,6 @@ main {
 }
 
 .form-btn-container {
-  display: flex;
   justify-content: space-between;
   width: 65%;
   min-width: 16.6rem;
@@ -172,13 +164,12 @@ main {
 }
 
 .history-p {
-  display: flex;
   align-items: center;
   padding: 0 2rem;
   height: 80%;
-  background-image: url(../img/image6.png);
+  background-image: url(../img/image-26-blur.png);
   background-size: cover;
-  background-position: center;
+  background-position: right;
   text-align: justify;
   text-shadow: 2px 2px 1px rgba(0,0,0,0.7);
   color: #EBECF0;
@@ -190,7 +181,6 @@ main {
 }
 
 .activities-list li {
-  display: flex;
   align-items: center;
   margin: 2rem 0;
 }
@@ -210,7 +200,6 @@ main {
 }
 
 .membership-list-info {
-  display: flex;
   align-items: start;
   justify-content: center;
   width: 76%;
@@ -253,12 +242,13 @@ main {
   }
 
   .activities-list {
-    width: 90%;
-    max-width: 30rem;
     display: flex;
     flex-flow: column wrap;
-    height: 40vh;
+    align-content: space-around;
     justify-content: flex-start;
+    width: 95%;
+    max-width: 32rem;
+    height: 20rem;
     margin-left: 1rem;
   }
 
@@ -369,27 +359,29 @@ main {
 @media screen and (min-width: 1024px) {
   #main-reason {
     flex-flow: column wrap;
-    max-height: 34.2rem;
+    max-height: 40.2rem;
   }
 
   .main-reason-title {
-    text-align: center;
+    width: 43%;
     margin: 3rem 0 0;
-    text-transform: uppercase;
-    font-size: 1.875rem;
-    width: 47%;
+    font-size: clamp(1.34rem, 2vw, 1.875rem);
+    text-align: center;
   }
 
   .main-reason-p {
-    width: 40%;
     order: 0;
+    width: 39%;
     margin: 1rem 0 4rem;
+    font-size: 1rem;
+    line-height: 1.6vw;
   }
+
   .main-reason-img {
     order: 0;
-    width: 52%;
-    margin-bottom: 2rem;
+    width: 57%;
     max-width: 38rem;
+    margin: 6rem 0 0;
   }
 
   .separation-line {
@@ -422,7 +414,7 @@ main {
   }
 
   #message {
-    width: 80%;
+    width: 85%;
   }
 
   .history-title {
@@ -434,8 +426,10 @@ main {
   .history-p {
     height: 100%;
     width: 67%;
+    padding: 0 8rem;
+    background-image: url(../img/image6.png);
+    background-position: center; 
     font-size: 2rem;
-    padding: 0 8rem; 
   }
 
   #act-mem-id {

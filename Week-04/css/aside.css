@@ -1,9 +1,8 @@
 aside {
-  /* display: flex; */
-  flex-flow: column wrap;
+  display: none;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  display: none;
   position: sticky;
   top: 0;
   text-align: center;
@@ -29,7 +28,6 @@ aside {
 }
 
 .nav-list {
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
@@ -53,6 +51,8 @@ aside {
 }
 
 .nav-list-a {
+  display: inline-block;
+  width: 100%;
   line-height: 4rem;
   font-size: 1.25rem;
   text-decoration: none;
@@ -64,11 +64,10 @@ aside {
 }
 
 .aside-info-list {
-  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: baseline;
-  height: 17vh;
+  height: 12vh;
 }
 
 .aside-info-list-a {
@@ -88,7 +87,6 @@ aside {
 }
 
 .social-media-aside {
-  display: flex;
   order: 3;
   align-self: flex-end;
 }
@@ -102,8 +100,10 @@ aside {
   
   aside {
     display: flex;
+    justify-content: initial;
     position: fixed;
     width: 20vw;
+    padding-top: 1rem;
     background-color: #AACE9B;
   }
 
@@ -113,7 +113,7 @@ aside {
 
   .rr-logo {
     order: 0;
-    width: 6rem;
+    width: 5rem;
     border: none;
   }
 
@@ -136,20 +136,21 @@ aside {
   }
 
   .nav-list-a {
-    line-height: 5vw;
-    font-size: 2vw;
+    line-height: 2.5rem;
+    font-size: clamp(0.625rem, 2vw, 1.25rem);
   }
 
   .other-op-title {
     display: inline-block;
     width: 90%;
     margin-bottom: 1rem;
-    font-size: 2vw;
+    font-size: clamp(0.625rem, 2vw, 1.875rem);
 
   }
 
   .other-op-list {
     display: inline-block;
+    margin-bottom: 1rem;
     width: 80%;
     text-align: left;
   }
@@ -159,7 +160,7 @@ aside {
   }
 
   .other-op-list-a {
-    font-size: 1.7vw;
+    font-size: clamp(0.5rem, 1.4vw, 1.25rem);
     text-decoration: none;
 
   }
@@ -173,7 +174,7 @@ aside {
   .aside-info-list-a {
     display: inline-block;
     margin-bottom: 0.6rem;
-    font-size: 1.5vw;
+    font-size: clamp(0.45rem, 1.4vw, 1.25rem);
   }
 
   .aside-info-list-a img {
@@ -184,5 +185,15 @@ aside {
 @media screen and (min-width: 1024px) {
   .nav-list {
     height: 40vh;
+  }
+  
+  .nav-list-a {
+    font-size: 1.25rem;
+    line-height: 3.5rem;
+    -webkit-text-stroke: 0;
+  }
+  
+  .selected {
+    font-size: clamp(1.25rem, 2vw, 1.875rem);
   }
 }
