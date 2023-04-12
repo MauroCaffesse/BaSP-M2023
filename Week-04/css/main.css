@@ -14,7 +14,7 @@ main {
 .main-reason-title {
   margin: 3rem 2rem 1.5rem;
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.875rem;
 }
 
 .main-reason-img {
@@ -75,7 +75,7 @@ main {
 
 .contact-title {
   margin: 1rem 0.5rem;
-  font-size: 2rem;
+  font-size: 1.875rem;
 }
 
 .contact-img {
@@ -287,10 +287,6 @@ main {
     font-size: 1.5rem;
   }
 
-  .contact-title, .history-title, .activities-title, .memberships-title {
-    font-size: 1.9rem;
-  }
-
   .contact-img {
     width: 3rem;
   }
@@ -362,19 +358,22 @@ main {
   }
 
   .main-reason-title {
-    width: 43%;
+    width: 41%;
     margin: 3rem 0 0;
+    padding-left: 1rem;
     font-size: clamp(1.34rem, 2vw, 1.875rem);
-    text-align: center;
+    text-align: justify;
   }
 
   .main-reason-p {
     order: 0;
-    width: 39%;
+    width: 40%;
     margin: 1rem 0 4rem;
+    padding-left: 1rem;
     font-size: 1rem;
     font-weight: 600;
     line-height: 1.6vw;
+    text-shadow: none;
   }
 
   .main-reason-img {
