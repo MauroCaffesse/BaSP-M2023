@@ -21,10 +21,10 @@ header {
 
 @media screen and (min-width: 480px) {
   header {
+    justify-content: initial;
     width: 80%;
     height: 5rem;
     margin-left: 20%;
-    justify-content: initial;
   }
 
   .rocket-logo {

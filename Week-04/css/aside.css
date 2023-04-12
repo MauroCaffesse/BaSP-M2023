@@ -1,20 +1,20 @@
 aside {
+  position: sticky;
   display: none;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  position: sticky;
-  top: 0;
-  text-align: center;
   height: 100vh;
+  top: 0;
   background-color: #FFFFFF;
+  text-align: center;
 }
 
 .hamburger-menu-aside {
   align-self: flex-start;
-  margin: 1rem;
   width: 47px;
   height: 47px;
+  margin: 1rem;
 }
 
 .rr-logo {
@@ -56,7 +56,7 @@ aside {
   line-height: 4rem;
   font-size: 1.25rem;
   text-decoration: none;
-  -webkit-text-stroke: 0.5px #AACE9B;
+  -webkit-text-stroke: 0.3px #AACE9B;
 }
 
 .nav-list li:first-child a {
@@ -117,12 +117,7 @@ aside {
     border: none;
   }
 
-  .navbar {
-    width: 100%;
-  }
-
   .nav-list {
-    width: 100%;
     height: 30vh;
   }
 
@@ -140,18 +135,23 @@ aside {
     font-size: clamp(0.625rem, 2vw, 1.25rem);
   }
 
+  .other-op-container {
+    margin-top: 1rem;
+  }
+
   .other-op-title {
     display: inline-block;
-    width: 90%;
+    width: 85%;
     margin-bottom: 1rem;
-    font-size: clamp(0.625rem, 2vw, 1.875rem);
+    font-size: clamp(0.618rem, 2vw, 1.875rem);
+    text-align: initial;
 
   }
 
   .other-op-list {
     display: inline-block;
-    margin-bottom: 1rem;
     width: 80%;
+    margin-bottom: 1rem;
     text-align: left;
   }
 
@@ -168,6 +168,7 @@ aside {
   .aside-info-list {
     justify-content: initial;
     width: 80%;
+    margin-top: 2rem;
     text-align: left;
   }
   

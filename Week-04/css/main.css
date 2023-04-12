@@ -14,7 +14,6 @@ main {
 .main-reason-title {
   margin: 3rem 2rem 1.5rem;
   text-align: center;
-  text-transform: uppercase;
   font-size: 2rem;
 }
 
@@ -49,16 +48,16 @@ main {
 .help-list {
   justify-content: space-around;
   flex-wrap: wrap;
-  margin-bottom: 6rem;
   width: 62%;
   height: 25rem;
+  margin-bottom: 6rem;
 }
 
 .help-list li {
   justify-content: center;
   align-items: center;
-  height: 4.4rem;
   width: 14.2rem;
+  height: 4.4rem;
   background-color: #EBECF0;
   border-radius: 0.3rem;
   border: 2px solid #373867;
@@ -113,8 +112,8 @@ main {
 
 .reason-for-contact {
   align-self: baseline;
-  text-align: left;
   font-size: 0.875rem;
+  text-align: left;
 }
 
 .reason-for-contact input {
@@ -165,8 +164,8 @@ main {
 
 .history-p {
   align-items: center;
-  padding: 0 2rem;
   height: 80%;
+  padding: 0 2rem;
   background-image: url(../img/image-26-blur.png);
   background-size: cover;
   background-position: right;
@@ -190,9 +189,9 @@ main {
 }
 
 .activities-list-p {
+  margin-left: 1rem;
   font-size: 1.2rem;
   font-weight: 600;
-  margin-left: 1rem;
 }
 
 .memberships-container {
@@ -332,9 +331,9 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto;
     max-width: 552px;
     width: 90%;
+    margin: auto;
   }
 
   .membership-list-info {
@@ -374,6 +373,7 @@ main {
     width: 39%;
     margin: 1rem 0 4rem;
     font-size: 1rem;
+    font-weight: 600;
     line-height: 1.6vw;
   }
 
@@ -385,14 +385,14 @@ main {
   }
 
   .separation-line {
-    height: 0.25rem;
     width: 90%;
+    height: 0.25rem;
     margin: 2rem 0;
   }
 
   #help-id {
-  background-size: 94%;
-  background-repeat: no-repeat;
+    background-size: 94%;
+    background-repeat: no-repeat;
   }
 
   .help-title {
@@ -419,13 +419,12 @@ main {
 
   .history-title {
     align-self: flex-start;
-    margin-left: 6.5%;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem 6%;
   }
 
   .history-p {
-    height: 100%;
     width: 67%;
+    height: 100%;
     padding: 0 8rem;
     background-image: url(../img/image6.png);
     background-position: center; 
@@ -446,8 +445,8 @@ main {
   }
 
   .activities-list {
-    height: auto;
     width: auto;
+    height: auto;
   }
 
   .activities-list li {
