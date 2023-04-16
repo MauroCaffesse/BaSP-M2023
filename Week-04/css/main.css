@@ -87,6 +87,7 @@ main {
   justify-content: space-between;
   width: 85%;
   height: 75vh;
+  max-height: 45rem;
   margin-top: 1rem;
 }
 
@@ -127,6 +128,7 @@ main {
 
 #message {
   margin-bottom: 1.5rem;
+  padding: 0.5rem;
 }
 
 .form-btn-container {
@@ -223,7 +225,7 @@ main {
 
 .membership-items {
   width: 60vw;
-  list-style-type:"-";
+  list-style-type: "-";
   font-size: 0.875rem;
 }
 
@@ -231,6 +233,10 @@ main {
   main {
     width: 80%;
     margin-left: 20%;
+  }
+
+  .main-reason-p {
+    text-shadow: none;
   }
   
   .activities-container {
@@ -358,19 +364,21 @@ main {
   }
 
   .main-reason-title {
-    width: 41%;
+    align-self: flex-start;
+    width: 39%;
     margin: 3rem 0 0;
-    padding-left: 1rem;
+    padding-left: 3.5%;
     font-size: clamp(1.34rem, 2vw, 1.875rem);
-    text-align: justify;
+    text-align: start;
   }
 
   .main-reason-p {
     order: 0;
-    width: 40%;
+    align-self: flex-start;
+    width: 36%;
     margin: 1rem 0 4rem;
-    padding-left: 1rem;
-    font-size: 1rem;
+    padding: 0 3.5%;
+    font-size: clamp(0.8rem, 1.1vw, 1rem);
     font-weight: 600;
     line-height: 1.6vw;
     text-shadow: none;

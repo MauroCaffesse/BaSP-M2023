@@ -119,6 +119,7 @@ aside {
 
   .nav-list {
     height: 30vh;
+    max-height: 30rem;
   }
 
   .nav-list li {
@@ -132,7 +133,7 @@ aside {
 
   .nav-list-a {
     line-height: 2.5rem;
-    font-size: clamp(0.625rem, 2vw, 1.25rem);
+    font-size: clamp(0.9rem, 2vw, 1.25rem);
   }
 
   .other-op-container {
@@ -143,9 +144,8 @@ aside {
     display: inline-block;
     width: 85%;
     margin-bottom: 1rem;
-    font-size: clamp(0.618rem, 2vw, 1.875rem);
+    font-size: clamp(0.8rem, 2vw, 1.875rem);
     text-align: initial;
-
   }
 
   .other-op-list {
@@ -160,7 +160,7 @@ aside {
   }
 
   .other-op-list-a {
-    font-size: clamp(0.5rem, 1.4vw, 1.25rem);
+    font-size: clamp(0.7rem, 1.4vw, 1.25rem);
     text-decoration: none;
 
   }
@@ -175,7 +175,7 @@ aside {
   .aside-info-list-a {
     display: inline-block;
     margin-bottom: 0.6rem;
-    font-size: clamp(0.45rem, 1.4vw, 1.25rem);
+    font-size: clamp(0.62rem, 1.4vw, 1.25rem);
   }
 
   .aside-info-list-a img {
