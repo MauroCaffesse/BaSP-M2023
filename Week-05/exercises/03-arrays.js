@@ -7,8 +7,20 @@ mostrar por consola los meses 5 y 11 (utilizar console.log). */
 
 console.log('------------EXERCISE 3.a------------');
 
-var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
-"Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+var months = [
+  "Enero",
+  "Febrero",
+  "Marzo",
+  "Abril",
+  "Mayo",
+  "Junio",
+  "Julio",
+  "Agosto",
+  "Septiembre",
+  "Octubre",
+  "Noviembre",
+  "Diciembre"
+];
 
 console.log(months[4], months[10]);
 
@@ -16,8 +28,20 @@ console.log(months[4], months[10]);
 
 console.log('------------EXERCISE 3.b------------');
 
-var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
-"Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+var months = [
+  "Enero",
+  "Febrero",
+  "Marzo",
+  "Abril",
+  "Mayo",
+  "Junio",
+  "Julio",
+  "Agosto",
+  "Septiembre",
+  "Octubre",
+  "Noviembre",
+  "Diciembre"
+];
 
 var alphabetMonth = months.sort();
 
@@ -27,8 +51,20 @@ console.log(alphabetMonth);
 
 console.log('------------EXERCISE 3.c------------');
 
-var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
-"Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+var months = [
+  "Enero",
+  "Febrero",
+  "Marzo",
+  "Abril",
+  "Mayo",
+  "Junio",
+  "Julio",
+  "Agosto",
+  "Septiembre",
+  "Octubre",
+  "Noviembre",
+  "Diciembre"
+];
 
 months.unshift('Radium');
 months.push('Rocket');
@@ -39,8 +75,20 @@ console.log(months);
 
 console.log('------------EXERCISE 3.d------------');
 
-var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
-"Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+var months = [
+  "Enero",
+  "Febrero",
+  "Marzo",
+  "Abril",
+  "Mayo",
+  "Junio",
+  "Julio",
+  "Agosto",
+  "Septiembre",
+  "Octubre",
+  "Noviembre",
+  "Diciembre"
+];
 
 months.shift();
 months.pop();
@@ -51,8 +99,20 @@ console.log(months);
 
 console.log('------------EXERCISE 3.e------------');
 
-var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
-"Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+var months = [
+  "Enero",
+  "Febrero",
+  "Marzo",
+  "Abril",
+  "Mayo",
+  "Junio",
+  "Julio",
+  "Agosto",
+  "Septiembre",
+  "Octubre",
+  "Noviembre",
+  "Diciembre"
+];
 
 months.reverse();
 
@@ -63,8 +123,20 @@ donde cada mes este separado por un guión - (utilizar join). */
 
 console.log('------------EXERCISE 3.f------------');
 
-var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
-"Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+var months = [
+  "Enero",
+  "Febrero",
+  "Marzo",
+  "Abril",
+  "Mayo",
+  "Junio",
+  "Julio",
+  "Agosto",
+  "Septiembre",
+  "Octubre",
+  "Noviembre",
+  "Diciembre"
+];
 
 var monthString = months.join('-');
 
@@ -74,8 +146,20 @@ console.log(monthString);
 
 console.log('------------EXERCISE 3.g------------');
 
-var months = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
-"Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+var months = [
+  "Enero",
+  "Febrero",
+  "Marzo",
+  "Abril",
+  "Mayo",
+  "Junio",
+  "Julio",
+  "Agosto",
+  "Septiembre",
+  "Octubre",
+  "Noviembre",
+  "Diciembre"
+];
 
 var newMonthArray = months.slice(4, 11);
 

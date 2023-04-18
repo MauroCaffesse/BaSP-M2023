@@ -48,3 +48,8 @@ display: flex;
 on __line 2__ of the __aside.css__ file.
 
 ## Week 05:
+### JavaScript Exercises using ES5
+
+[JavaScript Exercises Week-05 GitHub Pages](https://maurocaffesse.github.io/BaSP-M2023/Week-05/)
+
+During this week, I completed several JavaScript exercises using ECMAScript 5. These exercises covered topics such as variables and operators, strings, arrays, conditionals, loops, and functions. I applied my knowledge of these concepts to solve various problems and challenges, improving my problem-solving skills and familiarity with JavaScript syntax.
