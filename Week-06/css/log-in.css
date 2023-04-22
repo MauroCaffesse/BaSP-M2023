@@ -1,0 +1,175 @@
+.img-login-container {
+  align-items: center;
+  background-image: none;
+  padding: 1rem;
+}
+
+.arrow-img {
+  width: 1.5rem;
+}
+
+.rr-logo-words {
+  display: none;
+}
+
+.main-login {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.main-login img {
+  width: 15rem;
+}
+
+.login-form {
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.user-title {
+  margin: 1rem 0;
+  font-weight: 600;
+}
+
+.login-input {
+  width: 90%;
+  max-width: 25rem;
+  padding: 0.6rem 0.75rem;
+  border: 2px solid #373867;
+  border-radius: 0.3rem;
+}
+
+.email-error, .password-error {
+  display: none;
+}
+
+.error-display {
+  display: block;
+}
+
+.red-text {
+  color: red;
+}
+
+.red-border {
+  border: 1px solid red;
+}
+
+.signed-forgot-container {
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 17rem;
+  margin: 1.5rem 0;
+  font-size: 0.8rem;
+}
+
+.keep-signed {
+  align-items: center;
+  font-weight: 700;
+}
+
+.link-to-signup-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-self: center;
+  width: 50%;
+  max-width: 11rem;
+  margin: 1.5rem;
+}
+
+.login-btn {
+  align-self: center;
+  width: 10rem;
+  height: 3.5rem;
+  background-color: rgba(54, 54, 54, 0.26);
+  border: 2px solid #373867;
+  border-radius: 0.4rem;
+  font-size: 1.5rem;
+}
+
+
+@media screen and (min-width: 480px) {
+  body {
+    flex-wrap: nowrap;
+    height: 100vh;
+  }
+  
+  .img-login-container {
+    padding: 1.5rem;
+  }
+  
+  .arrow-img {
+    width: 2.5rem;
+  }
+
+  .main-login {
+    justify-content: space-evenly;
+    height: 80%;
+    padding: 0 2rem;
+  }
+
+  .main-login img {
+    width: 18rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    flex-direction: row;
+  }
+  
+  .img-login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 50%;
+    padding: 2rem;
+    background-image: url(../../assets/img/image-running.png);
+    background-position: center;
+    background-size: cover;
+  }
+
+  .arrow-img {
+    width: 3.5rem;
+  }
+
+  .rr-logo-words {
+    display: block;
+    width: 29rem;
+  }
+  
+  .main-login {
+    width: 50%;
+    height: auto;
+    align-self: center;
+  }
+
+  .main-login img {
+    width: 20rem;
+  }
+
+  .login-form {
+    align-items: baseline;
+    width: auto;
+  }
+  
+  .login-input {
+    width: 25rem;
+    height: 1.5rem;
+  }
+
+  .signed-forgot-container {
+    align-self: center;
+  }
+  
+  .login-btn {
+    width: 14rem;
+    height: 4.5rem;
+    font-size: 1.875rem;
+  }
+}

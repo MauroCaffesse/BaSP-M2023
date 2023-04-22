@@ -1,0 +1,30 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.blue-bg-color {
+  background-color: #373867;
+}
+
+.blue-txt {
+  color: #373867;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 480px) {
+  body {
+    display: flex;
+    flex-flow: column wrap;
+  }  
+}

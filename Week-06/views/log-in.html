@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/log-in.css">
+    <script defer src="../js/log-in.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="img-login-container flex-container">
+      <a href="../views/index.html">
+        <img class="arrow-img" src="../../assets/img/arrow.png" alt="">
+      </a>
+      <img class="rr-logo-words" src="../../assets/img/logo-rr-words.png" alt="">
+    </div>
+    <main class="main-login flex-container">
+      <img src="../../assets/img/logo-rr-login.png" alt="">
+      <form class="login-form flex-container">
+        <label class="user-title blue-txt" for="user">
+          User
+        </label>
+        <input id="user" class="login-input" type="text" placeholder="Put your email" required>
+        <p class="email-error">Email is wrong</p>
+        <label class="user-title blue-txt" for="password">
+          Password
+        </label>
+        <input id="password" class="login-input" type="password" placeholder="Put your password" required>
+        <p class="password-error">Password is wrong</p>
+        <div class="signed-forgot-container flex-container">
+          <label class="keep-signed flex-container" for="checkbox">
+            <input id="checkbox" type="checkbox">
+            Keep me Logged in
+          </label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <div class="link-to-signup-container bold">
+          <p>New here?</p>
+          <a href="./sign-up.html">Sign up</a>
+        </div>
+        <input class="login-btn bold blue-txt" type="submit" value="Login">
+      </form>
+    </main>
+  </body>
+</html>
