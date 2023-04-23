@@ -39,6 +39,19 @@
   border-radius: 0.3rem;
 }
 
+.error {
+  display: none;
+}
+
+.red-text {
+  font-size: 0.7rem;
+  color: red;
+}
+
+.red-border {
+  border: 1px solid red;
+}
+
 .terms-conditions-container {
   display: flex;
   justify-content: center;
@@ -74,6 +87,7 @@
   display: none;
 }
 
+
 @media screen and (min-width: 1024px) {
   body {
     flex-flow: row nowrap;
@@ -96,7 +110,7 @@
   .signup-form {
     flex-flow: column wrap;
     align-items: center;
-    height: 36rem;
+    height: 41rem;
     width: 80%;
   }
 

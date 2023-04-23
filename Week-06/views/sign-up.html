@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/sign-up.css">
-    <script defer src="../js/sign-up.js"></script>
+    <script src="../js/sign-up.js" defer></script>
     <title>Document</title>
   </head>
   <body>
@@ -18,49 +18,60 @@
       <img class="rr-logo-signup" src="../../assets/img/logo-rr-login.png" alt="">
       <form class="signup-form flex-container">
         <label class="user-data blue-txt" for="name">
-          Name
+          First name
         </label>
         <input id="name" class="user-data-input" type="text">
+        <p class="error input-p">Please enter a valid name</p>
         <label class="user-data blue-txt" for="lastname">
-          Lastname
+          Last name
         </label>
         <input id="lastname" class="user-data-input" type="text">
+        <p class="error input-p">Please enter a valid last name</p>
         <label class="user-data blue-txt" for="id">
           ID
         </label>
-        <input id="id" class="user-data-input" type="number">
+        <input id="id" class="user-data-input" type="text">
+        <p class="error input-p">Please enter a valid ID</p>
         <label class="user-data blue-txt" for="birthdate">
           Birth date
         </label>
         <input id="birthdate" class="user-data-input" type="date">
+        <p class="error input-p">Please enter a valid birth date</p>
         <label class="user-data blue-txt" for="phone">
           Phone number
         </label>
-        <input id="phone" class="user-data-input" type="number">
+        <input id="phone" class="user-data-input" type="text">
+        <p class="error input-p">Please enter a valid phone number</p>
         <label class="user-data blue-txt" for="address">
           Address
         </label>
         <input id="address" class="user-data-input" type="text">
+        <p class="error input-p">Please enter a valid address</p>
         <label class="user-data blue-txt" for="city">
           City
         </label>
         <input id="city" class="user-data-input" type="text">
+        <p class="error input-p">Please enter a valid city name</p>
         <label class="user-data blue-txt" for="zipcode">
           Zip code
         </label>
-        <input id="zipcode" class="user-data-input" type="number">
+        <input id="zipcode" class="user-data-input" type="text">
+        <p class="error input-p">Please enter a valid zip code</p>
         <label class="user-data blue-txt" for="email">
           Email
         </label>
         <input id="email" class="user-data-input" type="text">
+        <p class="error input-p">Please enter a valid email</p>
         <label class="user-data blue-txt" for="password">
           Password
         </label>
         <input id="password" class="user-data-input" type="password">
+        <p class="error input-p">Please enter a valid password</p>
         <label class="user-data blue-txt" for="r-password">
           Repeat password
         </label>
         <input id="r-password" class="user-data-input" type="password">
+        <p class="error input-p">Please enter the same password</p>
         <div class="terms-conditions-container">
           <label for="checkbox">
             <p>

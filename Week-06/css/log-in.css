@@ -42,15 +42,12 @@
   border-radius: 0.3rem;
 }
 
-.email-error, .password-error {
+.error {
   display: none;
 }
 
-.error-display {
-  display: block;
-}
-
 .red-text {
+  font-size: 0.7rem;
   color: red;
 }
 
