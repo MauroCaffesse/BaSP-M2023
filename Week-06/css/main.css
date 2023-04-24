@@ -94,30 +94,41 @@ main {
   margin-bottom: 1.6rem;
 }
 
-.user-data input {
-  height: 1.7rem;
+.input-p-container {
   width: 55%;
+}
+
+.user-data input {
+  width: 90%;
+  height: 1.7rem;
   padding-left: 1rem;
-  border: 2px solid #373867;
   border-radius: 1.5rem;
   font-size: 0.75rem;
   font-weight: 400;
 }
 
+.error {
+  display: none;
+}
+
+.red-text {
+  margin: 2px 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: red;
+}
+
+.red-border {
+  border: 1px solid red;
+}
+
 .contact-subtitle {
   align-self: flex-start;
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 
-.reason-for-contact {
-  align-self: baseline;
-  margin-bottom: 1.6rem;
-  font-size: 0.875rem;
-  text-align: left;
-}
-
-.reason-for-contact input {
-  margin-right: 1rem;
+#reason-for-contact {
+  width: 50%;
 }
 
 .message {
@@ -127,15 +138,18 @@ main {
 }
 
 #message {
-  margin-bottom: 1.5rem;
   padding: 0.5rem;
+}
+
+.justify {
+  text-align: justify;
 }
 
 .form-btn-container {
   justify-content: space-between;
   width: 65%;
   min-width: 16.6rem;
-  margin-bottom: 1.6rem;
+  margin: 1.6rem 0;
 }
 
 .form-btn-send {
