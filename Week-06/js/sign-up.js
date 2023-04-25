@@ -27,6 +27,15 @@ addressInput.addEventListener('blur', addressValidation)
 addressInput.addEventListener('focus', addressFocus)
 cityInput.addEventListener('blur', cityValidation)
 cityInput.addEventListener('focus', cityFocus)
+zipCodeInput.addEventListener('blur', zipCodeValidation)
+zipCodeInput.addEventListener('focus', zipCodeFocus)
+emailInput.addEventListener('blur', emailValidation)
+emailInput.addEventListener('focus', emailFocus)
+passwordInput.addEventListener('blur', passwordValidation)
+passwordInput.addEventListener('focus', passwordFocus)
+repeatPasswordInput.addEventListener('blur', repeatPassValidation)
+repeatPasswordInput.addEventListener('focus', repeatPassFocus)
+signupBtn.addEventListener('click', signupButton)
 
 function errorStylesOn(index) {
   errorParagraph[index].classList.add('red-text');
@@ -237,4 +246,168 @@ function cityValidation() {
 function cityFocus() {
   errorStylesOff(6);
   cityInput.classList.remove('red-border');
+}
+
+function validateZipCode(value) {
+  if (value.length < 4 || value.length > 5) {
+    return false;
+  }
+  for(i = 0; i < value.length; i++) {
+    if(isNaN(parseInt(value[i]))) {
+      return false;
+    }
+  }
+  return true;
+}
+
+function zipCodeValidation() {
+  if (!validateZipCode(zipCodeInput.value)) {
+    errorStylesOn(7);
+    zipCodeInput.classList.add('red-border');
+    errorParagraph[7].textContent = 'Please enter a valid Zip code';
+  }
+  return true;
+}
+
+function zipCodeFocus() {
+  errorStylesOff(7);
+  zipCodeInput.classList.remove('red-border');
+}
+
+function validateEmail(value) {
+  if (!emailExpression.test(value) || value.length < 5) {
+    return false;
+  }
+  return true;
+}
+
+function emailValidation() {
+  if(!validateEmail(emailInput.value)) {
+    errorStylesOn(8);
+    emailInput.classList.add('red-border');
+    errorParagraph[8].textContent = 'Please enter a valid Email';
+  }
+  return true;
+}
+
+function emailFocus() {
+  errorStylesOff(8);
+  emailInput.classList.remove('red-border');
+}
+
+function validatePassword(value) {
+  var num = 0;
+  var char = 0;
+  for (var i = 0; i < value.length; i++) {
+    if (value.charCodeAt(i) >= 48 && value.charCodeAt(i) <= 57) {
+      num++;
+    } else if (value.charCodeAt(i) >= 65 && value.charCodeAt(i) <= 90 || value.charCodeAt(i) >= 97 &&
+    value.charCodeAt(i) <= 122) {
+      char++;
+    } else {
+      return false;
+    }
+  }
+  if (num > 0 && char > 0 && value.length >= 8) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function passwordValidation() {
+  if(!validatePassword(passwordInput.value)) {
+    errorStylesOn(9);
+    passwordInput.classList.add('red-border');
+    errorParagraph[9].textContent = 'Please enter a valid Password';
+  }
+  return true;
+}
+
+function passwordFocus() {
+  errorStylesOff(9);
+  passwordInput.classList.remove('red-border');
+}
+
+function validateRepeatPass(value) {
+  if(!value) {
+    return false;
+  }
+  var password = passwordValidation(passwordInput.value);
+  if(password === true && value === passwordInput.value) {
+    return true;
+  }
+}
+
+function repeatPassValidation() {
+  if(!validateRepeatPass(repeatPasswordInput.value)) {
+    errorStylesOn(10);
+    repeatPasswordInput.classList.add('red-border');
+    errorParagraph[10].textContent = 'Please enter the same Password';
+  }
+  return true;
+}
+
+function repeatPassFocus() {
+  errorStylesOff(10);
+  repeatPasswordInput.classList.remove('red-border');
+}
+
+function signupButton(e) {
+  e.preventDefault();
+  var finalDate = formatDate(birthDateInput.value);
+  var fields = [
+    { valid: hasLetters(nameInput.value), errorIndex: 0, input: nameInput },
+    { valid: hasLetters(lastnameInput.value), errorIndex: 1, input: lastnameInput },
+    { valid: hasNumbers(idInput.value), errorIndex: 2, input: idInput },
+    { valid: validateBirthDate(birthDateInput.value), errorIndex: 3, input: birthDateInput },
+    { valid: hasTenNumbers(phoneInput.value), errorIndex: 4, input: phoneInput },
+    { valid: validateAddress(addressInput.value) && addressHasNum(addressInput.value) &&
+    addressHasLetter(addressInput.value), errorIndex: 5, input: addressInput },
+    { valid: cityHasSimbols(cityInput.value), errorIndex: 6, input: cityInput },
+    { valid: validateZipCode(zipCodeInput.value), errorIndex: 7, input: zipCodeInput },
+    { valid: validateEmail(emailInput.value), errorIndex: 8, input: emailInput },
+    { valid: validatePassword(passwordInput.value), errorIndex: 9, input: passwordInput },
+    { valid: validateRepeatPass(repeatPasswordInput.value), errorIndex: 10, input: repeatPasswordInput }
+  ];
+  var errors = [
+    'Name',
+    '\nLast name',
+    '\nID',
+    '\nBirth date',
+    '\nPhone number',
+    '\nAddress',
+    '\nCity',
+    '\nZip code',
+    '\nEmail',
+    '\nPassword',
+    '\nRepeat password'
+  ];
+  var invalidInputs = [];
+  var invalidInputsMessage = '';
+  for (var i = 0; i < fields.length; i++) {
+    var field = fields[i];
+    if (!field.valid) {
+      errorStylesOn(field.errorIndex);
+      errorParagraph[field.errorIndex].textContent = 'Please enter a valid ' + errors[i];
+      field.input.classList.add('red-border');
+      invalidInputs.push(field);
+      invalidInputsMessage += errors[i];
+    }
+  }
+  if (invalidInputs.length > 0) {
+    alert('Following fields must be correct:' + '\n' + invalidInputsMessage);
+  } else {
+    alert('Name: ' + nameInput.value +
+    '\nLastname: ' + lastnameInput.value +
+    '\nID: ' + idInput.value +
+    '\nBirth date: ' + finalDate +
+    '\nPhone number: ' + phoneInput.value +
+    '\nAddress: ' + addressInput.value +
+    '\nCity: ' + cityInput.value +
+    '\nZip code: ' + zipCodeInput.value +
+    '\nEmail: ' + emailInput.value +
+    '\nPassword: ' + passwordInput.value
+    );
+  }
 }
