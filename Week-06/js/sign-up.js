@@ -13,39 +13,39 @@ var errorParagraph = document.querySelectorAll('.input-p');
 var signupBtn = document.querySelector('.signup-btn');
 var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
 
-nameInput.addEventListener('blur', nameValidation)
-nameInput.addEventListener('focus', nameFocus)
-lastnameInput.addEventListener('blur', lastnameValidation)
-lastnameInput.addEventListener('focus', lastnameFocus)
-idInput.addEventListener('blur', idValidation)
-idInput.addEventListener('focus', idFocus)
-birthDateInput.addEventListener('blur', birthDateValidation)
-birthDateInput.addEventListener('focus', birthDateFocus)
-phoneInput.addEventListener('blur', phoneValidation)
-phoneInput.addEventListener('focus', phoneFocus)
-addressInput.addEventListener('blur', addressValidation)
-addressInput.addEventListener('focus', addressFocus)
-cityInput.addEventListener('blur', cityValidation)
-cityInput.addEventListener('focus', cityFocus)
-zipCodeInput.addEventListener('blur', zipCodeValidation)
-zipCodeInput.addEventListener('focus', zipCodeFocus)
-emailInput.addEventListener('blur', emailValidation)
-emailInput.addEventListener('focus', emailFocus)
-passwordInput.addEventListener('blur', passwordValidation)
-passwordInput.addEventListener('focus', passwordFocus)
-repeatPasswordInput.addEventListener('blur', repeatPassValidation)
-repeatPasswordInput.addEventListener('focus', repeatPassFocus)
-signupBtn.addEventListener('click', signupButton)
+nameInput.addEventListener('blur', nameValidation);
+nameInput.addEventListener('focus', nameFocus);
+lastnameInput.addEventListener('blur', lastnameValidation);
+lastnameInput.addEventListener('focus', lastnameFocus);
+idInput.addEventListener('blur', idValidation);
+idInput.addEventListener('focus', idFocus);
+birthDateInput.addEventListener('blur', birthDateValidation);
+birthDateInput.addEventListener('focus', birthDateFocus);
+phoneInput.addEventListener('blur', phoneValidation);
+phoneInput.addEventListener('focus', phoneFocus);
+addressInput.addEventListener('blur', addressValidation);
+addressInput.addEventListener('focus', addressFocus);
+cityInput.addEventListener('blur', cityValidation);
+cityInput.addEventListener('focus', cityFocus);
+zipCodeInput.addEventListener('blur', zipCodeValidation);
+zipCodeInput.addEventListener('focus', zipCodeFocus);
+emailInput.addEventListener('blur', emailValidation);
+emailInput.addEventListener('focus', emailFocus);
+passwordInput.addEventListener('blur', passwordValidation);
+passwordInput.addEventListener('focus', passwordFocus);
+repeatPasswordInput.addEventListener('blur', repeatPassValidation);
+repeatPasswordInput.addEventListener('focus', repeatPassFocus);
+signupBtn.addEventListener('click', signupButton);
 
 function errorStylesOn(index) {
   errorParagraph[index].classList.add('red-text');
   errorParagraph[index].classList.remove('error')
-}
+};
 
 function errorStylesOff(index) {
   errorParagraph[index].classList.remove('red-text');
   errorParagraph[index].classList.add('error');
-}
+};
 
 function hasLetters(value) {
   if (value.length < 3) {
@@ -58,7 +58,7 @@ function hasLetters(value) {
     }
   }
   return true;
-}
+};
 
 function nameValidation() {
   if (!hasLetters(nameInput.value)) {
@@ -67,12 +67,12 @@ function nameValidation() {
     errorParagraph[0].textContent = 'Please enter a valid Name';
   }
   return true;
-}
+};
 
 function nameFocus() {
   nameInput.classList.remove('red-border');
   errorStylesOff(0);
-}
+};
 
 function lastnameValidation() {
   if (!hasLetters(lastnameInput.value)) {
@@ -81,12 +81,12 @@ function lastnameValidation() {
     errorParagraph[1].textContent = 'Please enter a valid Last name';
   }
   return true;
-}
+};
 
 function lastnameFocus() {
   lastnameInput.classList.remove('red-border');
   errorStylesOff(1);
-}
+};
 
 function hasNumbers(value) {
   if (value.length < 7) {
@@ -98,7 +98,7 @@ function hasNumbers(value) {
     }
   }
   return true;
-}
+};
 
 function idValidation() {
   if(!hasNumbers(idInput.value)) {
@@ -106,12 +106,12 @@ function idValidation() {
     errorStylesOn(2);
     errorParagraph[2].textContent = 'Please enter a valid ID';
   }
-}
+};
 
 function idFocus() {
   idInput.classList.remove('red-border');
   errorStylesOff(2);
-}
+};
 
 function validateBirthDate(date) {
   if(!date) {
@@ -130,7 +130,7 @@ function formatDate(date) {
   var reverseArray = dateArray.reverse();
   var finalDate = reverseArray.join('/');
   return finalDate;
-}
+};
 
 function birthDateValidation() {
   if (!validateBirthDate(birthDateInput.value)) {
@@ -138,12 +138,12 @@ function birthDateValidation() {
     errorStylesOn(3);
     errorParagraph[3].textContent = 'Please enter a valid Birth date';
   }
-}
+};
 
 function birthDateFocus() {
   birthDateInput.classList.remove('red-border');
   errorStylesOff(3);
-}
+};
 
 function hasTenNumbers(value) {
   if (value.length != 10) {
@@ -155,7 +155,7 @@ function hasTenNumbers(value) {
     }
   }
   return true;
-}
+};
 
 function phoneValidation() {
   if(!hasTenNumbers(phoneInput.value)) {
@@ -163,12 +163,12 @@ function phoneValidation() {
     errorStylesOn(4);
     errorParagraph[4].textContent = 'Please enter a valid Phone number';
   }
-}
+};
 
 function phoneFocus() {
   errorStylesOff(4);
   phoneInput.classList.remove('red-border');
-}
+};
 
 function validateAddress(value) {
   var addressVal = value.trim();
@@ -181,7 +181,7 @@ function validateAddress(value) {
     return false;
   }
   return true;
-}
+};
 
 function addressHasNum(value) {
   for (var i = 0; i < value.length; i++) {
@@ -191,7 +191,7 @@ function addressHasNum(value) {
     }
   }
   return false;
-}
+};
 
 function addressHasLetter(value) {
   for (var i = 0; i < value.length; i++) {
@@ -201,7 +201,7 @@ function addressHasLetter(value) {
     }
   }
   return false;
-}
+};
 
 function addressValidation() {
   if (!validateAddress(addressInput.value) || !addressHasNum(addressInput.value) ||
@@ -211,12 +211,12 @@ function addressValidation() {
     errorParagraph[5].textContent = 'Please enter a valid Address';
   }
   return true;
-}
+};
 
 function addressFocus() {
   errorStylesOff(5);
   addressInput.classList.remove('red-border');
-}
+};
 
 function cityHasSimbols(value) {
   var letterCount = 0;
@@ -232,7 +232,7 @@ function cityHasSimbols(value) {
     }
   }
   return letterCount > 3;
-}
+};
 
 function cityValidation() {
   if (!cityHasSimbols(cityInput.value)) {
@@ -241,12 +241,12 @@ function cityValidation() {
     errorParagraph[6].textContent = 'Please enter a valid City';
   }
   return true;
-}
+};
 
 function cityFocus() {
   errorStylesOff(6);
   cityInput.classList.remove('red-border');
-}
+};
 
 function validateZipCode(value) {
   if (value.length < 4 || value.length > 5) {
@@ -258,7 +258,7 @@ function validateZipCode(value) {
     }
   }
   return true;
-}
+};
 
 function zipCodeValidation() {
   if (!validateZipCode(zipCodeInput.value)) {
@@ -267,19 +267,19 @@ function zipCodeValidation() {
     errorParagraph[7].textContent = 'Please enter a valid Zip code';
   }
   return true;
-}
+};
 
 function zipCodeFocus() {
   errorStylesOff(7);
   zipCodeInput.classList.remove('red-border');
-}
+};
 
 function validateEmail(value) {
   if (!emailExpression.test(value) || value.length < 5) {
     return false;
   }
   return true;
-}
+};
 
 function emailValidation() {
   if(!validateEmail(emailInput.value)) {
@@ -288,12 +288,12 @@ function emailValidation() {
     errorParagraph[8].textContent = 'Please enter a valid Email';
   }
   return true;
-}
+};
 
 function emailFocus() {
   errorStylesOff(8);
   emailInput.classList.remove('red-border');
-}
+};
 
 function validatePassword(value) {
   var num = 0;
@@ -313,7 +313,7 @@ function validatePassword(value) {
   } else {
     return false;
   }
-}
+};
 
 function passwordValidation() {
   if(!validatePassword(passwordInput.value)) {
@@ -322,12 +322,12 @@ function passwordValidation() {
     errorParagraph[9].textContent = 'Please enter a valid Password';
   }
   return true;
-}
+};
 
 function passwordFocus() {
   errorStylesOff(9);
   passwordInput.classList.remove('red-border');
-}
+};
 
 function validateRepeatPass(value) {
   if(!value) {
@@ -337,7 +337,7 @@ function validateRepeatPass(value) {
   if(password === true && value === passwordInput.value) {
     return true;
   }
-}
+};
 
 function repeatPassValidation() {
   if(!validateRepeatPass(repeatPasswordInput.value)) {
@@ -346,12 +346,12 @@ function repeatPassValidation() {
     errorParagraph[10].textContent = 'Please enter the same Password';
   }
   return true;
-}
+};
 
 function repeatPassFocus() {
   errorStylesOff(10);
   repeatPasswordInput.classList.remove('red-border');
-}
+};
 
 function signupButton(e) {
   e.preventDefault();
@@ -393,8 +393,8 @@ function signupButton(e) {
       field.input.classList.add('red-border');
       invalidInputs.push(field);
       invalidInputsMessage += errors[i];
-    }
-  }
+    };
+  };
   if (invalidInputs.length > 0) {
     alert('Following fields must be correct:' + '\n' + invalidInputsMessage);
   } else {
@@ -409,5 +409,5 @@ function signupButton(e) {
     '\nEmail: ' + emailInput.value +
     '\nPassword: ' + passwordInput.value
     );
-  }
-}
+  };
+};

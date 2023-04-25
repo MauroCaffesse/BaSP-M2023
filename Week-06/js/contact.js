@@ -24,12 +24,12 @@ btnResetContact.addEventListener('click', resetButton);
 function errorStylesOn(index) {
   errorParagraph[index].classList.add('red-text');
   errorParagraph[index].classList.remove('error')
-}
+};
 
 function errorStylesOff(index) {
   errorParagraph[index].classList.remove('red-text');
   errorParagraph[index].classList.add('error');
-}
+};
 
 function hasLetters(value) {
   if (value.length < 3) {
@@ -40,9 +40,9 @@ function hasLetters(value) {
     if (!(asciiCode > 64 && asciiCode < 91) && !(asciiCode > 96 && asciiCode < 123)) {
       return false;
     }
-  }
+  };
   return true;
-}
+};
 
 function nameContValidation() {
   if (!hasLetters(nameContact.value)) {
@@ -51,12 +51,12 @@ function nameContValidation() {
     errorParagraph[0].textContent = 'Please enter a valid Name';
   }
   return true;
-}
+};
 
 function nameContFocus() {
   errorStylesOff(0);
   nameContact.classList.remove('red-border');
-}
+};
 
 function lastnameContValidation() {
   if (!hasLetters(lastnameContact.value)) {
@@ -65,19 +65,19 @@ function lastnameContValidation() {
     errorParagraph[1].textContent = 'Please enter a valid Last name';
   }
   return true;
-}
+};
 
 function lastnameContFocus() {
   errorStylesOff(1);
   lastnameContact.classList.remove('red-border');
-}
+};
 
 function validateEmail(value) {
   if (!emailExpression.test(value) || value.length < 5) {
     return false;
   }
   return true;
-}
+};
 
 function emailContValidation() {
   if(!validateEmail(emailContact.value)) {
@@ -86,19 +86,19 @@ function emailContValidation() {
     errorParagraph[2].textContent = 'Please enter a valid Email';
   }
   return true;
-}
+};
 
 function emailContFocus() {
   errorStylesOff(2);
   emailContact.classList.remove('red-border');
-}
+};
 
 function validateOption(value) {
   if (value === '') {
     return false;
   }
   return true;
-}
+};
 
 function optionContValidation() {
   if(!validateOption(selectContact.value)) {
@@ -107,18 +107,18 @@ function optionContValidation() {
     errorParagraph[3].textContent = 'Please enter a valid Reason for contact';
   }
   return true;
-}
+};
 
 function optionContFocus() {
   errorStylesOff(3);
   selectContact.classList.remove('red-border');
-}
+};
 
 function validateMessage(value) {
   if(value.length >= 3) {
     return true;
   }
-}
+};
 
 function messageContValidation() {
   if(!validateMessage(messageContact.value)) {
@@ -127,12 +127,12 @@ function messageContValidation() {
     errorParagraph[4].textContent = 'Please enter a valid Message';
   }
   return true;
-}
+};
 
 function messageContFocus() {
   errorStylesOff(4);
   messageContact.classList.remove('red-border');
-}
+};
 
 function submitButton(e) {
   e.preventDefault();
@@ -155,7 +155,7 @@ function submitButton(e) {
       invalidInputs.push(field);
       invalidInputsMessage += errors[i];
     }
-  }
+  };
   if (invalidInputs.length > 0) {
     alert('Following fields must be correct:' + '\n' + invalidInputsMessage);
   } else {
@@ -164,8 +164,8 @@ function submitButton(e) {
     '\nReason: ' + selectContact.value +
     '\nMessage: ' + messageContact.value
     );
-  }
-}
+  };
+};
 
 function resetButton(e) {
   e.preventDefault();
@@ -181,5 +181,5 @@ function resetButton(e) {
   errorParagraph[field.errorIndex].classList.remove('red-text');
   errorParagraph[field.errorIndex].classList.add('error');
   field.input.classList.remove('red-border');
-  }
-}
+  };
+};

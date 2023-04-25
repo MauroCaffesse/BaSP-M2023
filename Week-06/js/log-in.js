@@ -8,24 +8,24 @@ mailInput.addEventListener('blur', emailBlurValidation);
 mailInput.addEventListener('focus', emailFocusValidation);
 passwordInput.addEventListener('blur', passwordBlurValidation);
 passwordInput.addEventListener('focus', passwordFocusValidation);
-loginBtn.addEventListener('click', loginButton)
+loginBtn.addEventListener('click', loginButton);
 
 function errorStylesOn(index) {
   errorParagraph[index].classList.add('red-text');
     errorParagraph[index].classList.remove('error')
-}
+};
 
 function errorStylesOff(index) {
   errorParagraph[index].classList.remove('red-text');
   errorParagraph[index].classList.add('error');
-}
+};
 
 function validateEmail(email) {
   if (!emailExpression.test(email) || email.length < 5) {
     return false;
   }
   return true;
-}
+};
 
 function emailBlurValidation() {
   if(!validateEmail(mailInput.value)) {
@@ -34,12 +34,12 @@ function emailBlurValidation() {
     errorParagraph[0].textContent = 'Please enter a valid Email';
   }
   return true;
-}
+};
 
 function emailFocusValidation() {
   mailInput.classList.remove('red-border');
   errorStylesOff(0);
-}
+};
 
 function validatePassword(value) {
   var num = 0;
@@ -52,14 +52,14 @@ function validatePassword(value) {
       char++;
     } else {
       return false;
-    }
-  }
+    };
+  };
   if (num > 0 && char > 0 && value.length >= 8) {
     return true;
   } else {
     return false;
-  }
-}
+  };
+};
 
 function passwordBlurValidation() {
   if (!validatePassword(passwordInput.value)) {
@@ -93,10 +93,10 @@ function loginButton(e) {
       invalidInputs.push(field);
       invalidInputsMessage += errors[i];
     }
-  }
+  };
   if (invalidInputs.length > 0) {
     alert('Following fields must be correct:' + '\n' + invalidInputsMessage);
   } else {
     alert('User: ' + mailInput.value + '\nPassword: ' + passwordInput.value);
-  }
-}
+  };
+};
