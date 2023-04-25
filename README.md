@@ -70,3 +70,17 @@ For Week 06, I was tasked with creating Login and Signup pages for the gym manag
 The validation process involved ensuring that required fields were filled in, checking that passwords matched, and validating email addresses. For the Signup page, additional fields such as name, last name, ID, date of birth, address, phone number, city, and postal code also required specific validation rules.
 
 By implementing these validation rules, I was able to create a secure and user-friendly experience for users of the gym management system.
+
+To display the sidebar on the mobile version, you need to change:
+
+```
+display: none;
+```
+
+to:
+
+```
+display: flex;
+```
+
+on **line 3** of the **aside.css** file.
