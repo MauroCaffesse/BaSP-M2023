@@ -63,7 +63,7 @@ During this week, I completed several JavaScript exercises using ECMAScript 5. T
 
 ### Building Login and Signup Pages with Form Validation using ES5
 
-[JavaScript Exercises Week-06 GitHub Pages](https://maurocaffesse.github.io/BaSP-M2023/Week-06/)
+[JavaScript Exercises Week-06 GitHub Pages](https://maurocaffesse.github.io/BaSP-M2023/Week-06/views/index.html)
 
 For Week 06, I was tasked with creating Login and Signup pages for the gym management system. I used HTML and CSS to design and style the pages, focusing on creating a clear and user-friendly layout. In addition, I added JavaScript validation to the form fields on both pages, using ECMAScript 5 to write the validation code.
 
