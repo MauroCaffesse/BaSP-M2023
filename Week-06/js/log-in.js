@@ -10,6 +10,16 @@ passwordInput.addEventListener('blur', passwordBlurValidation);
 passwordInput.addEventListener('focus', passwordFocusValidation);
 loginBtn.addEventListener('click', loginButton)
 
+function errorStylesOn(index) {
+  errorParagraph[index].classList.add('red-text');
+    errorParagraph[index].classList.remove('error')
+}
+
+function errorStylesOff(index) {
+  errorParagraph[index].classList.remove('red-text');
+  errorParagraph[index].classList.add('error');
+}
+
 function validateEmail(email) {
   if (!emailExpression.test(email) || email.length < 5) {
     return false;
@@ -20,80 +30,73 @@ function validateEmail(email) {
 function emailBlurValidation() {
   if(!validateEmail(mailInput.value)) {
     mailInput.classList.add('red-border');
-    errorParagraph[0].classList.add('red-text');
-    errorParagraph[0].classList.remove('error');
+    errorStylesOn(0);
+    errorParagraph[0].textContent = 'Please enter a valid Email';
   }
   return true;
 }
 
 function emailFocusValidation() {
   mailInput.classList.remove('red-border');
-  errorParagraph[0].classList.remove('red-text');
-  errorParagraph[0].classList.add('error');
+  errorStylesOff(0);
 }
 
-function validatePassword(password) {
-  var numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
-  for (var i = 0; i < password.length; i++) {
-    if (numbers.includes(password[i])) {
-      return true;
-    }
-  }
-  return false;
-}
-
-function hasNumbersAndChar(password) {
+function validatePassword(value) {
   var num = 0;
   var char = 0;
-
-  for (var i = 0; i < password.length; i++) {
-    if (password.length < 8) {
+  for (var i = 0; i < value.length; i++) {
+    if (value.charCodeAt(i) >= 48 && value.charCodeAt(i) <= 57) {
+      num++;
+    } else if (value.charCodeAt(i) >= 65 && value.charCodeAt(i) <= 90 || value.charCodeAt(i) >= 97 &&
+    value.charCodeAt(i) <= 122) {
+      char++;
+    } else {
       return false;
     }
-    if (validatePassword(password[i])) {
-      num++;
-    } else {
-      char++;
-    }
-    if (num > 0 && char > 0) {
-      return true;
-    }
   }
-  return false;
+  if (num > 0 && char > 0 && value.length >= 8) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function passwordBlurValidation() {
-  if (!hasNumbersAndChar(passwordInput.value)) {
-    errorParagraph[1].classList.remove('error');
-    errorParagraph[1].classList.add('red-text');
+  if (!validatePassword(passwordInput.value)) {
     passwordInput.classList.add('red-border');
+    errorStylesOn(1);
+    errorParagraph[1].textContent = 'Please enter a valid Password';
   }
   return true;
 };
 
 function passwordFocusValidation() {
-  errorParagraph[1].classList.add('error');
-  errorParagraph[1].classList.remove('red-text');
   passwordInput.classList.remove('red-border');
+  errorStylesOff(1)
 };
 
 function loginButton(e) {
   e.preventDefault();
-  var isEmailValid = validateEmail(mailInput.value);
-  var isPasswordValid = validatePassword(passwordInput.value);
-  if(!isEmailValid) {
-    errorParagraph[0].classList.remove('error');
-    errorParagraph[0].classList.add('red-text');
-    mailInput.classList.add('red-border');
+  var fields = [
+    { valid: validateEmail(mailInput.value), errorIndex: 0, input: mailInput },
+    { valid: validatePassword(passwordInput.value), errorIndex: 1, input: passwordInput },
+  ];
+  var errors = ['Email','\n' + 'Password'];
+  var invalidInputsMessage = '';
+  var invalidInputs = [];
+  for (var i = 0; i < fields.length; i++) {
+    var field = fields[i];
+    if (!field.valid) {
+      errorStylesOn(field.errorIndex);
+      errorParagraph[field.errorIndex].textContent = 'Please enter a valid ' + errors[i];
+      field.input.classList.add('red-border');
+      invalidInputs.push(field);
+      invalidInputsMessage += errors[i];
+    }
   }
-  if(!isPasswordValid) {
-    errorParagraph[1].classList.remove('error');
-    errorParagraph[1].classList.add('red-text');
-    passwordInput.classList.add('red-border');
-  }
-  if (!isEmailValid || !isPasswordValid) {
-    alert ('Complete with valid information');
+  if (invalidInputs.length > 0) {
+    alert('Following fields must be correct:' + '\n' + invalidInputsMessage);
   } else {
-    alert('User: ' + mailInput.value + '\n' + 'Password: ' + passwordInput.value)
+    alert('User: ' + mailInput.value + '\nPassword: ' + passwordInput.value);
   }
 }
