@@ -1,0 +1,42 @@
+header {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hamburger-menu {
+  width: 2.94rem;
+  margin: 0 0.3rem;
+}
+
+.rocket-logo {
+  display: none;
+}
+
+.header-title {
+  margin: auto;
+  font-size: 1.6rem;
+  color: #AACE9B;
+}
+
+@media screen and (min-width: 480px) {
+  header {
+    justify-content: initial;
+    height: 5rem;
+    margin-left: 20%;
+  }
+
+  .rocket-logo {
+    display: inline-block;
+    width: 30%;
+    max-width: 13rem;
+    margin: 0.7rem 0.8rem 0;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  .header-title {
+    margin: 0;
+  }
+}

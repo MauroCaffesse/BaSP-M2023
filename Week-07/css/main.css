@@ -1,0 +1,495 @@
+main {
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+
+#main-reason, #help-id, #contact-id, #history-id, #act-mem-id {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.main-reason-title {
+  margin: 3rem 2rem 1.5rem;
+  text-align: center;
+  font-size: 1.875rem;
+}
+
+.main-reason-img {
+  order: 1;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.main-reason-p {
+  order: 2;
+  margin: 1rem 1.5rem 4rem;
+  font-size: 1rem;
+  font-weight: 400;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  text-align: start;
+}
+
+#help-id {
+  background-image: url(../../assets/img/image5.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.help-title {
+  margin: 7rem 3.4rem 1rem;
+  font-size: 2.5rem;
+  line-height: 3rem;
+  color: #EBECF0;
+}
+
+.help-list {
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 62%;
+  height: 25rem;
+  margin-bottom: 6rem;
+}
+
+.help-list li {
+  justify-content: center;
+  align-items: center;
+  width: 14.2rem;
+  height: 4.4rem;
+  background-color: #EBECF0;
+  border-radius: 0.3rem;
+  border: 2px solid #373867;
+  font-size: 1rem;
+}
+
+.help-p {
+  margin: 0 1rem;
+}
+
+.contact-title-container {
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-title {
+  margin: 1rem 0.5rem;
+  font-size: 1.875rem;
+}
+
+.contact-img {
+  width: 2.5rem;
+}
+
+.contact-form {
+  flex-direction: column;
+  width: 85%;
+  margin-top: 1rem;
+}
+
+.user-data {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.6rem;
+}
+
+.input-p-container {
+  width: 55%;
+}
+
+.user-data input {
+  width: 90%;
+  height: 1.7rem;
+  padding-left: 1rem;
+  border-radius: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.error {
+  display: none;
+}
+
+.red-text {
+  margin: 2px 0;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: red;
+}
+
+.red-border {
+  border: 1px solid red;
+}
+
+.contact-subtitle {
+  align-self: flex-start;
+  margin: 1rem 0;
+}
+
+#reason-for-contact {
+  width: 50%;
+}
+
+.message {
+  align-self: baseline;
+  font-size: 0.875rem;
+  margin: 1.6rem 0;
+}
+
+#message {
+  padding: 0.5rem;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.form-btn-container {
+  justify-content: space-between;
+  width: 65%;
+  min-width: 16.6rem;
+  margin: 1.6rem 0;
+}
+
+.form-btn-send {
+  width: 9rem;
+  height: 1.6rem;
+  background-color: #AACE9B;
+  border: none;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+.form-btn-reset {
+  width: 6rem;
+  height: 1.6rem;
+  background-color: #FFFFFF;
+  border: 1.5px solid #373867;
+  border-radius: 5px;
+  font-weight: 600;
+}
+
+#history-id {
+  justify-content: space-evenly;
+  height: 65vh;
+}
+
+.history-title {
+  font-size: 1.875rem;
+}
+
+.history-p {
+  align-items: center;
+  height: 80%;
+  padding: 0 2rem;
+  background-image: url(../../assets/img/image-26-blur.png);
+  background-size: cover;
+  background-position: right;
+  text-align: justify;
+  text-shadow: 2px 2px 1px rgba(0,0,0,0.7);
+  color: #EBECF0;
+}
+
+.activities-title, .memberships-title {
+  margin: 2.5rem 0;
+  font-size: 1.875rem;
+}
+
+.activities-list li {
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.activities-list-img {
+  width: 2.5rem;
+}
+
+.activities-list-p {
+  margin-left: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.memberships-container {
+  width: 100%;
+}
+
+.membership-list-info {
+  align-items: start;
+  justify-content: center;
+  width: 76%;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+.membership-list-info img {
+  width: 2.2rem;
+  margin-top: 1rem;
+}
+
+.membership-subtitle-container {
+  padding-left: 1rem;
+  text-align: left;
+}
+
+.membership-subtitle {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.membership-items {
+  width: 60vw;
+  list-style-type: "-";
+  font-size: 0.875rem;
+}
+
+@media screen and (min-width: 480px) {
+  main {
+    width: 80%;
+    margin-left: 20%;
+  }
+
+  .main-reason-p {
+    text-shadow: none;
+  }
+  
+  .activities-container {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    align-items: center;
+  }
+
+  .activities-list {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: space-around;
+    justify-content: flex-start;
+    width: 95%;
+    max-width: 32rem;
+    height: 20rem;
+    margin-left: 1rem;
+  }
+
+  .activities-list li {
+    margin: 1rem 0;
+  }
+
+  .activities-list-img {
+    width: 4.3rem;
+  }
+
+  .activities-list-p {
+    line-height: 4rem;
+  }
+
+  
+  .membership-items {
+    width: 17rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main-reason-p {
+    font-size: 1.25rem;
+  }
+  
+  .help-list {
+    height: 30rem;
+  }
+
+  .help-list li {
+    width: 19rem;
+    height: 5.4rem;
+  }
+
+  .help-p {
+    font-size: 1.5rem;
+  }
+
+  .contact-img {
+    width: 3rem;
+  }
+
+  .user-data, .contact-subtitle, .reason-for-contact, .message {
+    font-size: 1.15rem;
+  }
+
+  .form-btn-container {
+    max-width: 21.8rem;
+  }
+
+  .form-btn-send {
+    width: 10rem;
+    height: 2.6rem;
+    font-size: 1rem;
+  }
+  
+  .form-btn-reset {
+    width: 7rem;
+    height: 2.6rem;
+    font-size: 1rem;
+  }
+  
+  #history-id {
+    height: 46rem;
+  }
+
+  .history-p {
+    font-size: 1.7rem;
+  }
+
+  .activities-list-p {
+    font-size: 1.6rem;
+  }
+  
+  .memberships-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 552px;
+    width: 90%;
+    margin: auto;
+  }
+
+  .membership-list-info {
+    width: 84%;
+    margin: 0 0 3rem 0;
+  }
+
+  .membership-subtitle-container {
+    width: 78%;
+  }
+
+  .membership-subtitle {
+    font-size: 1.6rem;
+  }
+
+  .membership-items {
+    width: 19rem;
+    font-size: 1.15rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #main-reason {
+    flex-flow: column wrap;
+    max-height: 40.2rem;
+  }
+
+  .main-reason-title {
+    align-self: flex-start;
+    width: 39%;
+    margin: 3rem 0 0;
+    padding-left: 3.5%;
+    font-size: clamp(1.34rem, 2vw, 1.875rem);
+    text-align: start;
+  }
+
+  .main-reason-p {
+    order: 0;
+    align-self: flex-start;
+    width: 36%;
+    margin: 1rem 0 4rem;
+    padding: 0 3.5%;
+    font-size: clamp(0.8rem, 1.1vw, 1rem);
+    font-weight: 600;
+    line-height: 1.6vw;
+    text-shadow: none;
+  }
+
+  .main-reason-img {
+    order: 0;
+    width: 57%;
+    max-width: 38rem;
+    margin: 6rem 0 0;
+  }
+
+  .separation-line {
+    width: 90%;
+    height: 0.25rem;
+    margin: 2rem 0;
+  }
+
+  #help-id {
+    background-size: 94%;
+    background-repeat: no-repeat;
+  }
+
+  .help-title {
+    margin: 7rem 3.4rem 5rem;
+  }
+  
+  .help-list {
+    width: 100%;
+    max-width: 57.2rem;
+    margin: 0;
+  }
+
+  .contact-title-container {
+    align-self: baseline;
+    margin-left: 6.5%;
+  }
+  .user-data {
+    width: 50%;
+  }
+
+  #message {
+    width: 85%;
+  }
+
+  .history-title {
+    align-self: flex-start;
+    margin: 0 0 1rem 6%;
+  }
+
+  .history-p {
+    width: 67%;
+    height: 100%;
+    padding: 0 8rem;
+    background-image: url(../../assets/img/image6.png);
+    background-position: center; 
+    font-size: 2rem;
+  }
+
+  #act-mem-id {
+    flex-direction: row;
+    align-items: baseline;
+  }
+
+  .activities-title {
+    margin: 2.5rem 5rem 2.5rem 0;
+  }
+
+  .activities-container {
+    width: 80%;
+  }
+
+  .activities-list {
+    width: auto;
+    height: auto;
+  }
+
+  .activities-list li {
+    margin: 0 0 2rem;
+  }
+
+  .activities-list-p {
+    margin-left: 4rem;
+  }
+
+  .activities-list-img {
+    width: 6rem;
+  }
+
+  .memberships-title {
+    margin: 2.5rem 5rem 2.5rem 0;
+    color: #000;
+  }
+
+  .membership-list-info {
+    width: 100%;
+    margin: 0 0 5rem 0;
+  }
+}
