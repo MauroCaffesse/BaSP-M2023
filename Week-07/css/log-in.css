@@ -88,6 +88,97 @@
   font-size: 1.5rem;
 }
 
+.modal-login-container {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: 100%;
+  height: 12rem;
+  background-color: #AACE9B;
+  border: 2px solid #373867;
+  border-radius: 8px 8px 0 0;
+}
+
+.modal-login-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+}
+
+.modal-header-p {
+  margin-left: 0.5rem;
+  color: #AACE9B;
+}
+
+.modal-login-main, .modal-login-main-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 50%;
+  flex-direction: column;
+}
+
+.modal-main-p-one, .modal-main-p-two, .modal-main-p-error {
+  margin: 0.5rem;
+}
+
+.modal-login-footer, .modal-login-footer-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30%;
+}
+
+.modal-footer-btn {
+  background-color: #AACE9B;
+  width: 5rem;
+  height: 1.5rem;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+.modal-login-container-error {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  height: 10rem;
+  background-color: rgb(255, 225, 225);
+  border: 2px solid black;
+  border-radius: 8px 8px 0 0;
+}
+
+.modal-login-header-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+  background-color: rgb(211, 76, 76);
+}
+
+.modal-header-p-error {
+  margin-left: 0.5rem;
+  color: black;
+}
+
+.modal-footer-btn-error {
+  background-color: rgb(255, 225, 225);
+  width: 5rem;
+  height: 1.5rem;
+  border: none;
+  border-bottom: 2px solid black;
+}
+
+.modal-d-block {
+  display: block;
+}
 
 @media screen and (min-width: 480px) {
   body {
@@ -111,6 +202,11 @@
 
   .main-login img {
     width: 18rem;
+  }
+
+  .modal-login-container, .modal-login-container-error {
+    top: 0;
+    border-radius: 0 0 8px 8px;
   }
 }
 
@@ -168,5 +264,11 @@
     width: 14rem;
     height: 4.5rem;
     font-size: 1.875rem;
+  }
+
+  .modal-login-container, .modal-login-container-error {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
   }
 }
