@@ -3,12 +3,22 @@ var passwordInput = document.querySelector('#password');
 var errorParagraph = document.querySelectorAll('.input-p-login');
 var loginBtn = document.querySelector('.login-btn');
 var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+var modalSuccessful = document.querySelector('.modal-login-container');
+var modalSuccessTitle = document.querySelector('.modal-header-p');
+var modalSuccessMainOne = document.querySelector('.modal-main-p-one');
+var modalSuccessMainTwo = document.querySelector('.modal-main-p-two');
+var modalSuccessBtn = document.querySelector('.modal-footer-btn');
+var modalError = document.querySelector('.modal-login-container-error');
+var modalErrorTitle = document.querySelector('.modal-header-p-error');
+var modalErrorMain = document.querySelector('.modal-main-p-error');
+var modalErrorBtn = document.querySelector('.modal-footer-btn-error');
 
 mailInput.addEventListener('blur', emailBlurValidation);
 mailInput.addEventListener('focus', emailFocusValidation);
 passwordInput.addEventListener('blur', passwordBlurValidation);
 passwordInput.addEventListener('focus', passwordFocusValidation);
 loginBtn.addEventListener('click', loginButton);
+document.addEventListener('click', outsideModal);
 
 function errorStylesOn(index) {
   errorParagraph[index].classList.add('red-text');
@@ -75,13 +85,15 @@ function passwordFocusValidation() {
   errorStylesOff(1)
 };
 
+var modalOpen = false;
+
 function loginButton(e) {
   e.preventDefault();
   var fields = [
     { valid: validateEmail(mailInput.value), errorIndex: 0, input: mailInput },
     { valid: validatePassword(passwordInput.value), errorIndex: 1, input: passwordInput },
   ];
-  var errors = ['Email','\n' + 'Password'];
+  var errors = ['Email.\n','Password.\n'];
   var invalidInputsMessage = '';
   var invalidInputs = [];
   for (var i = 0; i < fields.length; i++) {
@@ -95,8 +107,50 @@ function loginButton(e) {
     }
   };
   if (invalidInputs.length > 0) {
-    alert('Following fields must be correct:' + '\n' + invalidInputsMessage);
+    modalError.classList.add('modal-d-block');
+    modalErrorTitle.textContent = 'Unsuccessful Requirement';
+    modalErrorMain.textContent = 'Following fields must be correct: ' + invalidInputsMessage;
+    modalErrorBtn.onclick = function() {
+      modalError.classList.remove('modal-d-block');
+    };
   } else {
-    alert('User: ' + mailInput.value + '\nPassword: ' + passwordInput.value);
+    modalOpen = true;
+    var emailValue = mailInput.value;
+    var passwordValue = passwordInput.value;
+
+    var url = ` https://api-rest-server.vercel.app/login?email=${emailValue}&password=${passwordValue}`;
+
+    fetch(url)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        if (!data.success) {
+          throw new Error("Unsuccessful Log In. " + '\n' + JSON.stringify(data));
+        }
+        modalSuccessful.classList.add('modal-d-block');
+        modalSuccessTitle.textContent = 'Log In Successful!';
+        modalSuccessMainOne.textContent = 'User: ' + mailInput.value + '\n' +  'Password: ' + passwordInput.value;
+        modalSuccessMainTwo.textContent = JSON.stringify(data);
+        modalSuccessBtn.onclick = function() {
+          modalSuccessful.classList.remove('modal-d-block');
+        };
+      })
+      .catch(function (error) {
+        modalError.classList.add('modal-d-block');
+        modalErrorTitle.textContent = 'Unsuccessful Requirement';
+        modalErrorMain.textContent = error;
+        modalErrorBtn.onclick = function() {
+          modalError.classList.remove('modal-d-block');
+        };
+      });
   };
 };
+
+function outsideModal(e) {
+  if (modalOpen && e.target !== modalSuccessful && e.target !== modalError) {
+    modalSuccessful.classList.remove('modal-d-block');
+    modalError.classList.remove('modal-d-block');
+    modalOpen = false;
+  }
+}
