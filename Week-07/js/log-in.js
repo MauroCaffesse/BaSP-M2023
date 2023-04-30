@@ -12,6 +12,7 @@ var modalError = document.querySelector('.modal-login-container-error');
 var modalErrorTitle = document.querySelector('.modal-header-p-error');
 var modalErrorMain = document.querySelector('.modal-main-p-error');
 var modalErrorBtn = document.querySelector('.modal-footer-btn-error');
+var exitBtn = document.querySelector('.cross-img');
 
 mailInput.addEventListener('blur', emailBlurValidation);
 mailInput.addEventListener('focus', emailFocusValidation);
@@ -22,12 +23,21 @@ document.addEventListener('click', outsideModal);
 
 function errorStylesOn(index) {
   errorParagraph[index].classList.add('red-text');
-    errorParagraph[index].classList.remove('error')
+  errorParagraph[index].classList.remove('error');
 };
 
 function errorStylesOff(index) {
   errorParagraph[index].classList.remove('red-text');
   errorParagraph[index].classList.add('error');
+};
+
+function modalErrorFn(title, msg) {
+  modalError.classList.add('modal-d-block');
+  modalErrorTitle.textContent = title;
+  modalErrorMain.textContent = msg;
+  modalErrorBtn.onclick = function() {
+    modalError.classList.remove('modal-d-block');
+  }
 };
 
 function validateEmail(email) {
@@ -107,18 +117,13 @@ function loginButton(e) {
     }
   };
   if (invalidInputs.length > 0) {
-    modalError.classList.add('modal-d-block');
-    modalErrorTitle.textContent = 'Unsuccessful Requirement';
-    modalErrorMain.textContent = 'Following fields must be correct: ' + invalidInputsMessage;
-    modalErrorBtn.onclick = function() {
-      modalError.classList.remove('modal-d-block');
-    };
+    modalErrorFn('Unsuccessful Requirement', 'Following fields must be correct: ' + invalidInputsMessage);
   } else {
     modalOpen = true;
     var emailValue = mailInput.value;
     var passwordValue = passwordInput.value;
 
-    var url = ` https://api-rest-server.vercel.app/login?email=${emailValue}&password=${passwordValue}`;
+    var url = `https://api-rest-server.vercel.app/login?email=${emailValue}&password=${passwordValue}`;
 
     fetch(url)
       .then(function (response) {
@@ -135,14 +140,12 @@ function loginButton(e) {
         modalSuccessBtn.onclick = function() {
           modalSuccessful.classList.remove('modal-d-block');
         };
+        exitBtn.onclick = function() {
+          modalSuccessful.classList.remove('modal-d-block');
+        };
       })
       .catch(function (error) {
-        modalError.classList.add('modal-d-block');
-        modalErrorTitle.textContent = 'Unsuccessful Requirement';
-        modalErrorMain.textContent = error;
-        modalErrorBtn.onclick = function() {
-          modalError.classList.remove('modal-d-block');
-        };
+        modalErrorFn('Unsuccessful Requirement', error);
       });
   };
 };
@@ -153,4 +156,4 @@ function outsideModal(e) {
     modalError.classList.remove('modal-d-block');
     modalOpen = false;
   }
-}
+};

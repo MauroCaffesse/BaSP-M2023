@@ -12,6 +12,16 @@ var repeatPasswordInput = document.querySelector('#r-password');
 var errorParagraph = document.querySelectorAll('.input-p');
 var signupBtn = document.querySelector('.signup-btn');
 var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+var modalSuccessful = document.querySelector('.modal-signup-container');
+var modalSuccessTitle = document.querySelector('.modal-header-p');
+var modalSuccessMainOne = document.querySelector('.modal-main-p-one');
+var modalSuccessMainTwo = document.querySelector('.modal-main-p-two');
+var modalSuccessBtn = document.querySelector('.modal-footer-btn');
+var modalError = document.querySelector('.modal-signup-container-error');
+var modalErrorTitle = document.querySelector('.modal-header-p-error');
+var modalErrorMain = document.querySelector('.modal-main-p-error');
+var modalErrorBtn = document.querySelector('.modal-footer-btn-error');
+var exitBtn = document.querySelector('.cross-img');
 
 nameInput.addEventListener('blur', nameValidation);
 nameInput.addEventListener('focus', nameFocus);
@@ -36,6 +46,8 @@ passwordInput.addEventListener('focus', passwordFocus);
 repeatPasswordInput.addEventListener('blur', repeatPassValidation);
 repeatPasswordInput.addEventListener('focus', repeatPassFocus);
 signupBtn.addEventListener('click', signupButton);
+document.addEventListener('DOMContentLoaded', loadedForm);
+document.addEventListener('click', changeModal);
 
 function errorStylesOn(index) {
   errorParagraph[index].classList.add('red-text');
@@ -45,6 +57,15 @@ function errorStylesOn(index) {
 function errorStylesOff(index) {
   errorParagraph[index].classList.remove('red-text');
   errorParagraph[index].classList.add('error');
+};
+
+function modalErrorFn(title, msg) {
+  modalError.classList.add('modal-d-block');
+  modalErrorTitle.textContent = title;
+  modalErrorMain.textContent = msg;
+  modalErrorBtn.onclick = function() {
+    modalError.classList.remove('modal-d-block');
+  };
 };
 
 function hasLetters(value) {
@@ -127,8 +148,7 @@ function validateBirthDate(date) {
 
 function formatDate(date) {
   var dateArray = date.split("-");
-  var reverseArray = dateArray.reverse();
-  var finalDate = reverseArray.join('/');
+  var finalDate = dateArray[2] + '/' + dateArray[1] + '/' + dateArray[0];
   return finalDate;
 };
 
@@ -153,7 +173,7 @@ function hasTenNumbers(value) {
     if(isNaN(parseInt(value[i]))) {
       return false;
     }
-  }
+  };
   return true;
 };
 
@@ -189,7 +209,7 @@ function addressHasNum(value) {
     if ((asciiNumCode >= 48 && asciiNumCode <= 57)) {
       return true;
     }
-  }
+  };
   return false;
 };
 
@@ -199,7 +219,7 @@ function addressHasLetter(value) {
     if ((asciiLetCode > 64 && asciiLetCode < 91) || (asciiLetCode > 96 && asciiLetCode < 123)) {
       return true;
     }
-  }
+  };
   return false;
 };
 
@@ -229,8 +249,8 @@ function cityHasSimbols(value) {
       }
     } else {
       return false;
-    }
-  }
+    };
+  };
   return letterCount > 3;
 };
 
@@ -306,8 +326,8 @@ function validatePassword(value) {
       char++;
     } else {
       return false;
-    }
-  }
+    };
+  };
   if (num > 0 && char > 0 && value.length >= 8) {
     return true;
   } else {
@@ -353,6 +373,8 @@ function repeatPassFocus() {
   repeatPasswordInput.classList.remove('red-border');
 };
 
+var modalOpen = false;
+
 function signupButton(e) {
   e.preventDefault();
   var finalDate = formatDate(birthDateInput.value);
@@ -371,17 +393,17 @@ function signupButton(e) {
     { valid: validateRepeatPass(repeatPasswordInput.value), errorIndex: 10, input: repeatPasswordInput }
   ];
   var errors = [
-    'Name',
-    '\nLast name',
-    '\nID',
-    '\nBirth date',
-    '\nPhone number',
-    '\nAddress',
-    '\nCity',
-    '\nZip code',
-    '\nEmail',
-    '\nPassword',
-    '\nRepeat password'
+    'Name.',
+    '\nLast name.',
+    '\nID.',
+    '\nBirth date.',
+    '\nPhone number.',
+    '\nAddress.',
+    '\nCity.',
+    '\nZip code.',
+    '\nEmail.',
+    '\nPassword.',
+    '\nRepeat password.'
   ];
   var invalidInputs = [];
   var invalidInputsMessage = '';
@@ -396,18 +418,113 @@ function signupButton(e) {
     };
   };
   if (invalidInputs.length > 0) {
-    alert('Following fields must be correct:' + '\n' + invalidInputsMessage);
+    modalErrorFn('Unsuccessful Requirement', 'Following fields must be correct: ' + invalidInputsMessage);
   } else {
-    alert('Name: ' + nameInput.value +
-    '\nLastname: ' + lastnameInput.value +
-    '\nID: ' + idInput.value +
-    '\nBirth date: ' + finalDate +
-    '\nPhone number: ' + phoneInput.value +
-    '\nAddress: ' + addressInput.value +
-    '\nCity: ' + cityInput.value +
-    '\nZip code: ' + zipCodeInput.value +
-    '\nEmail: ' + emailInput.value +
-    '\nPassword: ' + passwordInput.value
-    );
+    modalOpen = true;
+    var nameValue = nameInput.value;
+    var lastnameValue = lastnameInput.value;
+    var idValue = idInput.value;
+
+    var arrayDate = birthDateInput.value.split('-');
+    var formattedDate = arrayDate[1] + '/' + arrayDate[2] + '/' + arrayDate[0];
+    
+    var phoneValue = phoneInput.value;
+    var addressValue = addressInput.value;
+    var cityValue = cityInput.value;
+    var zipCodeValue = zipCodeInput.value;
+    var emailValue = emailInput.value;
+    var passwordValue = passwordInput.value;
+
+    var keyValueData = [
+      { key: "name", value: nameValue },
+      { key: "lastName", value: lastnameValue },
+      { key: "dni", value: idValue },
+      { key: "dob", value: formattedDate },
+      { key: "phone", value: phoneValue },
+      { key: "address", value: addressValue },
+      { key: "city", value: cityValue },
+      { key: "zip", value: zipCodeValue },
+      { key: "email", value: emailValue },
+      { key: "password", value: passwordValue },
+    ];
+    
+    var url = 'https://api-rest-server.vercel.app/signup?name=' + 
+      nameValue + '&lastName=' + lastnameValue + '&dni=' + 
+      idValue + '&dob=' + formattedDate + '&phone=' + phoneValue + '&address=' + 
+      addressValue + '&city=' + cityValue + '&zip=' + zipCodeValue + '&email=' + 
+      emailValue + '&password=' + passwordValue;
+      
+    fetch(url)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      if(!data.success) {
+        throw new Error('Unsuccessful Registration. \n' + data.errors[0].msg);
+      }
+      modalSuccessful.classList.add('modal-d-block');
+      modalSuccessTitle.textContent = 'Registration completed successfully.';
+      modalSuccessMainOne.textContent =
+      '\nName: ' + nameInput.value +
+      '\nLastname: ' + lastnameInput.value +
+      '\nID: ' + idInput.value +
+      '\nBirth date: ' + finalDate +
+      '\nPhone number: ' + phoneInput.value +
+      '\nAddress: ' + addressInput.value +
+      '\nCity: ' + cityInput.value +
+      '\nZip code: ' + zipCodeInput.value +
+      '\nEmail: ' + emailInput.value +
+      '\nPassword: ' + passwordInput.value;
+      modalSuccessMainTwo.textContent = data.msg;
+      modalSuccessBtn.onclick = function() {
+        modalSuccessful.classList.remove('modal-d-block');
+      };
+      exitBtn.onclick = function() {
+        modalSuccessful.classList.remove('modal-d-block');
+      };
+      for (var i = 0; i < keyValueData.length; i++) {
+        var data = keyValueData[i];
+        localStorage.setItem(data.key, data.value);  
+      };
+    })
+    .catch(function (error) {
+      modalErrorFn('Unsuccessful Requirement', error);
+    });
   };
+};
+
+function loadedForm() {
+  var keyInputsData = [
+    { key: "name", input: nameInput },
+    { key: "lastName", input: lastnameInput },
+    { key: "dni", input: idInput },
+    { key: "dob", input: birthDateInput },
+    { key: "phone", input: phoneInput },
+    { key: "address", input: addressInput },
+    { key: "city", input: cityInput },
+    { key: "zip", input: zipCodeInput },
+    { key: "email", input: emailInput },
+    { key: "password", input: passwordInput },
+    { key: "password", input: repeatPasswordInput },
+  ];
+  for (var i = 0; i < keyInputsData.length; i++) {
+    var data = keyInputsData[i];
+    if(localStorage.getItem(data.key)) {
+      if(data.key === "dob") {
+        var storedDate = localStorage.getItem(data.key);
+        var showedDate = new Date(storedDate);
+        data.input.value = showedDate.toLocaleDateString("en-CA");
+      } else {
+        data.input.value = localStorage.getItem(data.key);
+      };
+    };
+  };
+};
+
+function changeModal(e) {
+  if (modalOpen && e.target !== modalSuccessful && e.target !== modalError) {
+    modalSuccessful.classList.remove('modal-d-block');
+    modalError.classList.remove('modal-d-block');
+    modalOpen = false;
+  }
 };
