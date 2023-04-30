@@ -51,6 +51,7 @@
 }
 
 .red-text {
+  padding-top: 0.6rem;
   font-size: 0.7rem;
   color: red;
 }
@@ -92,6 +93,111 @@
 
 .rr-logo-words {
   display: none;
+}
+
+.modal-signup-container {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  height: 50%;
+  background-color: #FFFFFF;
+  border: 2px solid #373867;
+  border-radius: 8px 8px 0 0;
+}
+
+.modal-signup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+}
+
+.modal-header-p {
+  margin-left: 1rem;
+  color: #373867;
+  font-size: 1.2rem;
+}
+
+.cross-img {
+  width: 0.8rem;
+  padding: 1rem;
+}
+
+.modal-signup-main, .modal-signup-main-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 50%;
+}
+
+.modal-main-p-one, .modal-main-p-two, .modal-main-p-error {
+  margin: 1rem;
+}
+
+.modal-signup-footer, .modal-signup-footer-error {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  height: 30%;
+}
+
+.modal-footer-btn {
+  width: 5.5rem;
+  height: 2.5rem;
+  margin: 0 1rem;
+  background-color: #AACE9B;
+  border: none;
+  border-radius: 5px;
+}
+
+.modal-signup-container-error {
+  position: fixed;
+  display: none;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  height: 10rem;
+  background-color: #E9D0C8;
+  border: 2px solid black;
+  border-radius: 8px 8px 0 0;
+}
+
+.modal-signup-header-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+  background-color: #E9D0C8;
+}
+
+.modal-header-p-error {
+  margin-left: 1rem;
+  color: #F13312;
+}
+
+.modal-footer-btn-error {
+  margin: 0 1rem;
+  width: 5.5rem;
+  height: 2.5rem;
+  background-color: rgb(245, 239, 239);
+  border: 1px solid #F13312;
+  border-radius: 5px;
+}
+
+.modal-d-block {
+  display: block;
+}
+
+@media screen and (min-width: 480px) {
+  .modal-signup-container, .modal-signup-container-error {
+    top: 0;
+    border-radius: 0 0 8px 8px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -155,5 +261,12 @@
   .rr-logo-words {
     display: block;
     width: 17rem;
+  }
+
+  .modal-signup-container, .modal-signup-container-error {
+    left: 50%;
+    width: fit-content;
+    height: 30%;
+    transform: translateX(-50%);
   }
 }
