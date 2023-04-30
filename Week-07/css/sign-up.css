@@ -266,6 +266,7 @@
   .modal-signup-container, .modal-signup-container-error {
     left: 50%;
     width: fit-content;
+    min-width: 50%;
     height: 30%;
     transform: translateX(-50%);
   }

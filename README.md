@@ -63,13 +63,39 @@ During this week, I completed several JavaScript exercises using ECMAScript 5. T
 
 ### Building Login and Signup Pages with Form Validation using ES5
 
-[JavaScript Exercises Week-06 GitHub Pages](https://maurocaffesse.github.io/BaSP-M2023/Week-06/views/index.html)
+[MegaRocket S.A Week-06 GitHub Pages](https://maurocaffesse.github.io/BaSP-M2023/Week-06/views/index.html)
 
 For Week 06, I was tasked with creating Login and Signup pages for the gym management system. I used HTML and CSS to design and style the pages, focusing on creating a clear and user-friendly layout. In addition, I added JavaScript validation to the form fields on both pages, using ECMAScript 5 to write the validation code.
 
 The validation process involved ensuring that required fields were filled in, checking that passwords matched, and validating email addresses. For the Signup page, additional fields such as name, last name, ID, date of birth, address, phone number, city, and postal code also required specific validation rules.
 
 By implementing these validation rules, I was able to create a secure and user-friendly experience for users of the gym management system.
+
+To display the sidebar on the mobile version, you need to change:
+
+```
+display: none;
+```
+
+to:
+
+```
+display: flex;
+```
+
+on **line 3** of the **aside.css** file.
+
+## Week 07:
+
+### HTTP Requests with Fetch and Form Data Persistence using LocalStorage in JavaScript
+
+[MegaRocket S.A Week-07 GitHub Pages](https://maurocaffesse.github.io/BaSP-M2023/Week-07/views/index.html)
+
+During Week 7, the focus was on using HTTP requests made with the Fetch method in JavaScript to send data from the extended forms of Week 6 to a web server.
+
+Upon form submission, data is sent as query-params to either the login or signup URL depending on the form. If the response is successful, a modal is shown indicating that the request was successful, and the response data is displayed in the same modal.
+
+For the Signup form, the data obtained from the successful HTTP request must also be saved in the LocalStorage and displayed in the form every time the page is refreshed. If the response is unsuccessful, an error modal is shown.
 
 To display the sidebar on the mobile version, you need to change:
 
