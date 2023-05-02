@@ -35,7 +35,7 @@ function modalErrorFn(title, msg) {
   modalError.classList.add('modal-d-block');
   modalErrorTitle.textContent = title;
   modalErrorMain.textContent = msg;
-  modalErrorBtn.onclick = function() {
+  modalErrorBtn.onclick = function () {
     modalError.classList.remove('modal-d-block');
   }
 };
@@ -48,7 +48,7 @@ function validateEmail(email) {
 };
 
 function emailBlurValidation() {
-  if(!validateEmail(mailInput.value)) {
+  if (!validateEmail(mailInput.value)) {
     mailInput.classList.add('red-border');
     errorStylesOn(0);
     errorParagraph[0].textContent = 'Please enter a valid Email';
@@ -68,7 +68,7 @@ function validatePassword(value) {
     if (value.charCodeAt(i) >= 48 && value.charCodeAt(i) <= 57) {
       num++;
     } else if (value.charCodeAt(i) >= 65 && value.charCodeAt(i) <= 90 || value.charCodeAt(i) >= 97 &&
-    value.charCodeAt(i) <= 122) {
+      value.charCodeAt(i) <= 122) {
       char++;
     } else {
       return false;
@@ -103,7 +103,7 @@ function loginButton(e) {
     { valid: validateEmail(mailInput.value), errorIndex: 0, input: mailInput },
     { valid: validatePassword(passwordInput.value), errorIndex: 1, input: passwordInput },
   ];
-  var errors = ['Email.\n','Password.\n'];
+  var errors = ['\nEmail', '\nPassword'];
   var invalidInputsMessage = '';
   var invalidInputs = [];
   for (var i = 0; i < fields.length; i++) {
@@ -131,16 +131,16 @@ function loginButton(e) {
       })
       .then(function (data) {
         if (!data.success) {
-          throw new Error("Unsuccessful Log In. " + '\n' + JSON.stringify(data));
+          throw new Error("Unsuccessful Log In. " + '\n' + data.msg);
         }
         modalSuccessful.classList.add('modal-d-block');
         modalSuccessTitle.textContent = 'Log In Successful!';
-        modalSuccessMainOne.textContent = 'User: ' + mailInput.value + '\n' +  'Password: ' + passwordInput.value;
-        modalSuccessMainTwo.textContent = JSON.stringify(data);
-        modalSuccessBtn.onclick = function() {
+        modalSuccessMainOne.textContent = 'User: ' + mailInput.value + '\n' + 'Password: ' + passwordInput.value;
+        modalSuccessMainTwo.textContent = data.msg;
+        modalSuccessBtn.onclick = function () {
           modalSuccessful.classList.remove('modal-d-block');
         };
-        exitBtn.onclick = function() {
+        exitBtn.onclick = function () {
           modalSuccessful.classList.remove('modal-d-block');
         };
       })

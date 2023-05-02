@@ -101,7 +101,7 @@
   bottom: 0;
   z-index: 1;
   width: 100%;
-  height: 50%;
+  height: fit-content;
   background-color: #FFFFFF;
   border: 2px solid #373867;
   border-radius: 8px 8px 0 0;
@@ -112,11 +112,10 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 20%;
 }
 
 .modal-header-p {
-  margin-left: 1rem;
+  margin: 1rem;
   color: #373867;
   font-size: 1.2rem;
 }
@@ -131,24 +130,24 @@
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
-  height: 50%;
 }
 
 .modal-main-p-one, .modal-main-p-two, .modal-main-p-error {
   margin: 1rem;
+  line-height: 1.2rem;
+  white-space: pre-line;
 }
 
 .modal-signup-footer, .modal-signup-footer-error {
   display: flex;
   align-items: center;
   justify-content: end;
-  height: 30%;
 }
 
 .modal-footer-btn {
   width: 5.5rem;
   height: 2.5rem;
-  margin: 0 1rem;
+  margin: 1rem;
   background-color: #AACE9B;
   border: none;
   border-radius: 5px;
@@ -160,7 +159,6 @@
   bottom: 0;
   z-index: 1;
   width: 100%;
-  height: 10rem;
   background-color: #E9D0C8;
   border: 2px solid black;
   border-radius: 8px 8px 0 0;
@@ -171,17 +169,16 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 20%;
   background-color: #E9D0C8;
 }
 
 .modal-header-p-error {
-  margin-left: 1rem;
+  margin: 1rem;
   color: #F13312;
 }
 
 .modal-footer-btn-error {
-  margin: 0 1rem;
+  margin: 1rem;
   width: 5.5rem;
   height: 2.5rem;
   background-color: rgb(245, 239, 239);
@@ -196,6 +193,7 @@
 @media screen and (min-width: 480px) {
   .modal-signup-container, .modal-signup-container-error {
     top: 0;
+    bottom: initial;
     border-radius: 0 0 8px 8px;
   }
 }
@@ -267,7 +265,7 @@
     left: 50%;
     width: fit-content;
     min-width: 50%;
-    height: 30%;
+    height: fit-content;
     transform: translateX(-50%);
   }
 }
