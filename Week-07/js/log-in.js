@@ -3,6 +3,7 @@ var passwordInput = document.querySelector('#password');
 var errorParagraph = document.querySelectorAll('.input-p-login');
 var loginBtn = document.querySelector('.login-btn');
 var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+var modalOverlay = document.querySelector('.modal-overlay');
 var modalSuccessful = document.querySelector('.modal-login-container');
 var modalSuccessTitle = document.querySelector('.modal-header-p');
 var modalSuccessMainOne = document.querySelector('.modal-main-p-one');
@@ -19,7 +20,6 @@ mailInput.addEventListener('focus', emailFocusValidation);
 passwordInput.addEventListener('blur', passwordBlurValidation);
 passwordInput.addEventListener('focus', passwordFocusValidation);
 loginBtn.addEventListener('click', loginButton);
-document.addEventListener('click', outsideModal);
 
 function errorStylesOn(index) {
   errorParagraph[index].classList.add('red-text');
@@ -33,10 +33,12 @@ function errorStylesOff(index) {
 
 function modalErrorFn(title, msg) {
   modalError.classList.add('modal-d-block');
+  modalOverlay.classList.add('modal-d-block');
   modalErrorTitle.textContent = title;
   modalErrorMain.textContent = msg;
   modalErrorBtn.onclick = function () {
     modalError.classList.remove('modal-d-block');
+    modalOverlay.classList.remove('modal-d-block');
   }
 };
 
@@ -95,8 +97,6 @@ function passwordFocusValidation() {
   errorStylesOff(1)
 };
 
-var modalOpen = false;
-
 function loginButton(e) {
   e.preventDefault();
   var fields = [
@@ -119,7 +119,6 @@ function loginButton(e) {
   if (invalidInputs.length > 0) {
     modalErrorFn('Unsuccessful Requirement', 'Following fields must be correct: ' + invalidInputsMessage);
   } else {
-    modalOpen = true;
     var emailValue = mailInput.value;
     var passwordValue = passwordInput.value;
 
@@ -131,29 +130,24 @@ function loginButton(e) {
       })
       .then(function (data) {
         if (!data.success) {
-          throw new Error("Unsuccessful Log In. " + '\n' + data.msg);
+          throw new Error('Unsuccessful Log In. ' + '\n' + data.msg);
         }
         modalSuccessful.classList.add('modal-d-block');
+        modalOverlay.classList.add('modal-d-block');
         modalSuccessTitle.textContent = 'Log In Successful!';
         modalSuccessMainOne.textContent = 'User: ' + mailInput.value + '\n' + 'Password: ' + passwordInput.value;
         modalSuccessMainTwo.textContent = data.msg;
         modalSuccessBtn.onclick = function () {
           modalSuccessful.classList.remove('modal-d-block');
+          modalOverlay.classList.remove('modal-d-block');
         };
         exitBtn.onclick = function () {
           modalSuccessful.classList.remove('modal-d-block');
+          modalOverlay.classList.remove('modal-d-block');
         };
       })
       .catch(function (error) {
         modalErrorFn('Unsuccessful Requirement', error);
       });
   };
-};
-
-function outsideModal(e) {
-  if (modalOpen && e.target !== modalSuccessful && e.target !== modalError) {
-    modalSuccessful.classList.remove('modal-d-block');
-    modalError.classList.remove('modal-d-block');
-    modalOpen = false;
-  }
 };

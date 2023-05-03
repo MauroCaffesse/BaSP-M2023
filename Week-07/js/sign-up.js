@@ -12,6 +12,7 @@ var repeatPasswordInput = document.querySelector('#r-password');
 var errorParagraph = document.querySelectorAll('.input-p');
 var signupBtn = document.querySelector('.signup-btn');
 var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+var modalOverlay = document.querySelector('.modal-overlay');
 var modalSuccessful = document.querySelector('.modal-signup-container');
 var modalSuccessTitle = document.querySelector('.modal-header-p');
 var modalSuccessMainOne = document.querySelector('.modal-main-p-one');
@@ -47,7 +48,6 @@ repeatPasswordInput.addEventListener('blur', repeatPassValidation);
 repeatPasswordInput.addEventListener('focus', repeatPassFocus);
 signupBtn.addEventListener('click', signupButton);
 document.addEventListener('DOMContentLoaded', loadedForm);
-document.addEventListener('click', changeModal);
 
 function errorStylesOn(index) {
   errorParagraph[index].classList.add('red-text');
@@ -61,10 +61,12 @@ function errorStylesOff(index) {
 
 function modalErrorFn(title, msg) {
   modalError.classList.add('modal-d-block');
+  modalOverlay.classList.add('modal-d-block');
   modalErrorTitle.textContent = title;
   modalErrorMain.textContent = msg;
   modalErrorBtn.onclick = function () {
     modalError.classList.remove('modal-d-block');
+    modalOverlay.classList.remove('modal-d-block');
   };
 };
 
@@ -147,7 +149,7 @@ function validateBirthDate(date) {
 };
 
 function formatDate(date) {
-  var dateArray = date.split("-");
+  var dateArray = date.split('-');
   var finalDate = dateArray[2] + '/' + dateArray[1] + '/' + dateArray[0];
   return finalDate;
 };
@@ -373,8 +375,6 @@ function repeatPassFocus() {
   repeatPasswordInput.classList.remove('red-border');
 };
 
-var modalOpen = false;
-
 function signupButton(e) {
   e.preventDefault();
   var finalDate = formatDate(birthDateInput.value);
@@ -422,7 +422,6 @@ function signupButton(e) {
   if (invalidInputs.length > 0) {
     modalErrorFn('Unsuccessful Requirement', 'Following fields must be correct: ' + invalidInputsMessage);
   } else {
-    modalOpen = true;
     var nameValue = nameInput.value;
     var lastnameValue = lastnameInput.value;
     var idValue = idInput.value;
@@ -452,6 +451,7 @@ function signupButton(e) {
           throw new Error('Unsuccessful Registration. \n' + data.errors[0].msg);
         }
         modalSuccessful.classList.add('modal-d-block');
+        modalOverlay.classList.add('modal-d-block');
         modalSuccessTitle.textContent = 'Registration completed successfully.';
         modalSuccessMainOne.textContent =
           '\nName: ' + nameInput.value +
@@ -467,9 +467,11 @@ function signupButton(e) {
         modalSuccessMainTwo.textContent = data.msg;
         modalSuccessBtn.onclick = function () {
           modalSuccessful.classList.remove('modal-d-block');
+          modalOverlay.classList.remove('modal-d-block');
         };
         exitBtn.onclick = function () {
           modalSuccessful.classList.remove('modal-d-block');
+          modalOverlay.classList.remove('modal-d-block');
         };
         localStorage.setItem('name', nameValue);
         localStorage.setItem('lastName', lastnameValue);
@@ -490,36 +492,28 @@ function signupButton(e) {
 
 function loadedForm() {
   var keyInputsData = [
-    { key: "name", input: nameInput },
-    { key: "lastName", input: lastnameInput },
-    { key: "dni", input: idInput },
-    { key: "dob", input: birthDateInput },
-    { key: "phone", input: phoneInput },
-    { key: "address", input: addressInput },
-    { key: "city", input: cityInput },
-    { key: "zip", input: zipCodeInput },
-    { key: "email", input: emailInput },
-    { key: "password", input: passwordInput },
-    { key: "password", input: repeatPasswordInput },
+    { key: 'name', input: nameInput },
+    { key: 'lastName', input: lastnameInput },
+    { key: 'dni', input: idInput },
+    { key: 'dob', input: birthDateInput },
+    { key: 'phone', input: phoneInput },
+    { key: 'address', input: addressInput },
+    { key: 'city', input: cityInput },
+    { key: 'zip', input: zipCodeInput },
+    { key: 'email', input: emailInput },
+    { key: 'password', input: passwordInput },
+    { key: 'password', input: repeatPasswordInput },
   ];
   for (var i = 0; i < keyInputsData.length; i++) {
     var data = keyInputsData[i];
     if (localStorage.getItem(data.key)) {
-      if (data.key === "dob") {
+      if (data.key === 'dob') {
         var storedDate = localStorage.getItem(data.key);
         var showedDate = new Date(storedDate);
-        data.input.value = showedDate.toLocaleDateString("en-CA");
+        data.input.value = showedDate.toLocaleDateString('en-CA');
       } else {
         data.input.value = localStorage.getItem(data.key);
       };
     };
   };
-};
-
-function changeModal(e) {
-  if (modalOpen && e.target !== modalSuccessful && e.target !== modalError) {
-    modalSuccessful.classList.remove('modal-d-block');
-    modalError.classList.remove('modal-d-block');
-    modalOpen = false;
-  }
 };
